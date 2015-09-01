@@ -1,0 +1,139 @@
+= minitest-rails-capybara
+
+Capybara integration for Minitest and Rails.
+
+{<img src="https://secure.travis-ci.org/blowmage/minitest-rails-capybara.png" alt="Build Status" />}[http://travis-ci.org/blowmage/minitest-rails-capybara]
+{<img src="https://codeclimate.com/github/blowmage/minitest-rails-capybara.png" />}[https://codeclimate.com/github/blowmage/minitest-rails-capybara]
+
+== Install
+
+    gem install minitest-rails-capybara
+
+This installs the following gems:
+
+    minitest
+    minitest-rails
+    minitest-capybara
+    capybara
+
+== Configure
+
+Follow the instructions to configure <tt>minitest-rails</tt>. Then add <tt>minitest-rails-capybara</tt> to the <tt>:test</tt> group in Gemfile:
+
+    gem "minitest-rails"
+
+    group :test do
+      gem "minitest-rails-capybara"
+    end
+
+Add the following to your <tt>test_helper.rb</tt> file to the <tt>test</tt> directory.
+
+    require "minitest/rails/capybara"
+
+== Usage
+
+Capybara is intended to be used for automating a browser to test your application's features. This is different than the integration tests that Rails provides, so you must use the <tt>Capybara::Rails::TestCase</tt> for your feature tests.
+
+To generate these feature tests, you can use the feature generator:
+
+    rails generate minitest:feature CanAccessHome
+
+You can now use Capybara in your feature tests!
+
+    require "test_helper"
+    
+    class CanAccessHomeTest < Capybara::Rails::TestCase
+      def test_homepage_has_content
+        visit root_path
+        assert page.has_content?("Home#index")
+      end
+    end
+
+Or you can specify use of the Capybara's spec DSL by providing the <tt>--spec</tt> option:
+
+    rails generate minitest:feature CanAccessHome --spec
+
+Which will generate a feature test using the Capybara spec DSL:
+
+    require "test_helper"
+    
+    feature "Can Access Home" do
+      scenario "has content" do
+        visit root_path
+        page.must_have_content "Home#index"
+      end
+    end
+
+An alternative way to specify using Capybara is to provide <tt>:capybara</tt> as a second argument to <tt>describe</tt>:
+
+    require "test_helper"
+
+    describe "Can Access Home", :capybara do
+      it "has content" do
+        visit root_path
+        page.must_have_content "Home#index"
+      end
+    end
+
+While not recommended, you can add Capybara to your integration tests. To do this add the following to your <tt>test_helper.rb</tt> file:
+
+    class ActionDispatch::IntegrationTest
+      include Capybara::DSL
+      include Capybara::Assertions
+    end
+
+== Specifying drivers
+
+Tests can specify drivers by setting the metadata.
+
+    feature "Can Access Home" do
+      scenario "has content", js: true do
+        visit root_path # Visited with JavaScript driver
+        page.must_have_content "Home#index"
+      end
+    end
+
+For more information, see the minitest-metadata library:
+
+https://github.com/wojtekmach/minitest-metadata
+
+== Running Tests
+
+Add the following to your <tt>Rakefile</tt> or a file in <tt>lib/tasks</tt> to add a rake task for running feature tests:
+
+    Rails::TestTask.new("test:features" => "test:prepare") do |t|
+      t.pattern = "test/features/**/*_test.rb"
+    end
+
+If you want your new task to be run when you run <tt>rake test</tt>, also add the following:
+
+    Rake::Task["test:run"].enhance ["test:features"]
+
+== Get Involved
+
+Join the mailing list to get help or offer suggestions.
+
+https://groups.google.com/group/minitest-rails
+
+== License
+
+Copyright (c) 2014 Mike Moore
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
