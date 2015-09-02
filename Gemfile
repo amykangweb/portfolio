@@ -8,7 +8,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sqlite3'
 gem 'turbolinks'
 
-# Gems for assets
 group :assets do
   gem 'coffee-rails', '~> 4.1.0'
   gem 'sass-rails', '~> 5.0'
@@ -24,4 +23,3 @@ group :development do
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end
-
