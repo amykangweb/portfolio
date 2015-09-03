@@ -7,6 +7,12 @@ By Amy Kang
   This application is an example of Rails best practices.
 </p>
 
+<h2>Information</h2>
+
+<p>
+  <img src="https://www.dropbox.com/s/jndlgnl1almwfmt/index.png?raw=1" alt="Index Page" />
+</p>
+
 <h2>Authors</h2>
 
 Amy Kang (https://github.com/amykangweb/)
