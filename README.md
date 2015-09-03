@@ -10,7 +10,7 @@ By Amy Kang
 <h2>Information</h2>
 
 <p>
-  <img src="https://www.dropbox.com/s/jndlgnl1almwfmt/index.png?dl=0" alt="Index Page" />
+  <img src="https://www.dropbox.com/s/jndlgnl1almwfmt/index.png?raw=1" alt="Index Page" />
 </p>
 
 <h2>Authors</h2>
