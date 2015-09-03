@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'eefgilm'
+gemfile = Eefgilm::Gemfile.new
+gemfile.clean!
