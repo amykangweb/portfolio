@@ -17,10 +17,10 @@ By Amy Kang
 
 Amy Kang (https://github.com/amykangweb/)
 
-<h2>Further Resources</h2>
+<h2>Resources</h2>
 
 <p>
-  <a href="http://mcdowall.info/posts/gemfile-best-practices-and-discourse/">Gemfile Best Practices & Discourse</a>
+  <a href="https://www.foundationmade.com/themes/item/FMHzj72j">Gemfile Best ACCALIA PORTFOLIO ONE PAGE</a><br>By Nakome
 </p>
 
 <p>
