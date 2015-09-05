@@ -1,0 +1,235 @@
+<!-- top container -->
+<section class="top_container">
+
+  <!-- Info -->
+  <div class="logo">
+
+    <h1 class="header_title text-center">Amy Kang</h1>
+    <h2 class="subheader_title text-center">
+      Making small batches of exclusive products every day
+    </h2>
+
+  </div>
+  <!-- / logo -->
+
+  <!-- / go to next -->
+  <a href="#info" class="goTo link">
+    <i class="fi-arrow-down"></i>
+  </a>
+</section>
+<!-- /.masthead -->
+
+
+
+<!-- .after_header -->
+<section id="info" class="after_top text-center">
+  <div class="row">
+    <div class="medium-10 small-centered columns">
+
+      <h2>Title of Recent Blog Post Goes Here</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, suscipit, beatae unde nisi placeat itaque deserunt totam tempore nesciunt autem voluptatem commodi. Soluta, expedita quae natus libero voluptate hic fugit.</p>
+      <!-- http://stackoverflow.com/questions/10871002/how-to-render-html-string-in-link-to-anchor -->
+      <p>
+       <%= link_to "Read More &#8594;".html_safe, "#", class: "button success" %>
+      </p>
+
+    </div>
+    <!-- /.medium-10 .small-centered .columns -->
+  </div>
+  <!-- /.row -->
+</section>
+<!-- / .after_header -->
+
+<!-- bottom_border -->
+<div class="bottom_border"></div>
+
+<!--  info_box -->
+  <section id="about" class="about_us">
+    <div class="row">
+      <div class="medium-4 columns">
+        <div class="about_item">
+          <div class="about_item_icon">
+          <%= image_tag("ava-1.jpg", alt: "Author") %>
+          </div>
+          <!-- / after_header_icon -->
+
+          <h4>Addison</h4>
+          <p>Web Technical Specialist.</p>
+
+        </div>
+        <!-- /.after_header_col -->
+      </div>
+      <!-- /.medium-4 .columns -->
+    </div>
+    <!-- /.row -->
+  </section>
+  <!-- / .info_box -->
+
+<!-- top_border -->
+<div class="top_border"></div>
+<!--  portfolio -->
+<section id="portfolio" class="portfolio">
+  <div class="row">
+    <div class="small-12 large-12 column text-center">
+
+      <ul id="filter">
+        <li class="active">
+          <a href="#" class="tiny button">All</a>
+        </li>
+        <li>
+          <a href="#" class="tiny button">Rails</a>
+        </li>
+        <li>
+          <a href="#" class="tiny button">WordPress</a>
+        </li>
+        <li>
+          <a href="#" class="tiny button">Mockups</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <ul class="portfolio_items row">
+
+    <li class="mockups  portfolio_item  large-4 medium-6 small-12 columns">
+      <div class="portfolio_inner">
+        <%= link_to image_tag("cards_2.jpg", alt: "Recent Work"), root_path %>
+        <div class="portfolio_caption">
+          <h4>Mockups One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </li>
+
+    <li class="rails  portfolio_item  large-4 medium-6 small-12 columns">
+      <div class="portfolio_inner">
+        <%= link_to image_tag("cards_2.jpg", alt: "Recent Work"), root_path %>
+        <div class="portfolio_caption">
+          <h4>Design One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </li>
+
+
+    <li class="wordpress  portfolio_item  large-4 medium-6 small-12 columns">
+      <div class="portfolio_inner">
+        <%= link_to image_tag("cards_2.jpg", alt: "Recent Work"), root_path %>
+        <div class="portfolio_caption">
+          <h4>Mockups One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </li>
+
+
+
+    <li class="mockups  portfolio_item  large-4 medium-6 small-12 columns">
+      <div class="portfolio_inner">
+        <%= link_to image_tag("cards_2.jpg", alt: "Recent Work"), root_path %>
+        <div class="portfolio_caption">
+          <h4>Mockups One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </li>
+
+
+
+    <li class="rails  portfolio_item  large-4 medium-6 small-12 columns">
+      <div class="portfolio_inner">
+        <%= link_to image_tag("cards_2.jpg", alt: "Recent Work"), root_path %>
+        <div class="portfolio_caption">
+          <h4>Design One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </li>
+
+
+    <li class="wordpress  portfolio_item  large-4 medium-6 small-12 columns">
+      <div class="portfolio_inner">
+        <%= link_to image_tag("cards_2.jpg", alt: "Recent Work"), root_path %>
+        <div class="portfolio_caption">
+          <h4>Mockups One</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+  <!-- /portfolio -->
+</section>
+<!-- / portfolio -->
+
+<!-- http://apidock.com/rails/ActionView/Helpers/UrlHelper/mail_to -->
+<!-- http://stackoverflow.com/questions/20694997/how-to-add-glyphicons-to-rails-link-to-helper-bootstrap-3 -->
+<!-- bottom_border -->
+<div class="bottom_border"></div>
+<div class="row">
+  <h3 class="small-6 small-centered column text-center">
+    Contact Me
+  </h3>
+  <!-- share -->
+  <ul class="share_icons">
+    <li>
+      <a href="#">
+        <i class="fi-social-twitter size-36"></i>
+      </a>
+    </li>
+    <li>
+      <%= link_to "https://www.linkedin.com/in/amykang6023" do %>
+        <i class="fi-social-linkedin size-36"></i>
+      <% end %>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fi-social-github size-36"></i>
+      </a>
+    </li>
+    <li>
+      <%= mail_to "selene6023@gmail.com", name: "Amy Kang" do %>
+        <i class="fi-mail size-36"></i>
+      <% end %>
+    </li>
+  </ul>
+  <!-- / share icons -->
+
+<!--  contact -->
+<section id="contactUs" class="contact">
+  <!-- row -->
+  <div class="row">
+    <h3 class="small-6 small-centered column text-center">
+      Contact Me
+    </h3>
+  </div>
+  <div class="row">
+    <div class="small-12 medium-6 medium-centered large-6 large-centered column">
+      <form id="contact" data-abide>
+        <div class="name-field">
+          <label>Your name
+            <small>required</small>
+          </label>
+          <input type="text" placeholder="Write your name ..." required pattern="[a-zA-Z]+">
+          <small class="error">Name is required and must be a string.</small>
+        </div>
+        <div class="email-field">
+          <label>Email
+            <small>required</small>
+          </label>
+          <input type="email" placeholder="Write your email ..." required>
+          <small class="error">An email address is required.</small>
+        </div>
+
+        <label>Menssage</label>
+        <textarea class="textarea" placeholder="Write a menssage ..."></textarea>
+        <button class="" type="submit">Send Menssage</button>
+      </form>
+
+    </div>
+  </div>
+  <!-- /.row -->
+</section>
+<!-- / contact -->
+<!-- top_border -->
+<div class="top_border"></div>

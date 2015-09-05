@@ -1,7 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'foundation-icons-sass-rails'
+gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'minitest-rails'
 gem 'rails', '4.2.4'
 gem 'sdoc', '~> 0.4.0', group: :doc
