@@ -1,42 +1,131 @@
-<div class="row">
-  <div class="large-12 columns">
+<!-- Full Page Image Header Area -->
+  <div id="top" class="header">
+      <div class="vert-text" style="background: rgba(0,0,0,0.6);">
+          <h1>Amy Kang</h1>
+          <h3>Designer / Developer</h3>
+          <br />
+          <a href="#about" class="button radius yellow-bg">Find Out More</a>
+      </div>
+  </div>
+<!-- /Full Page Image Header Area -->
 
-    <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-clearing>
-      <li>
-        <%= link_to "#" do %>
-          <div class="image-wrapper overlay-fade-in">
-            <%= image_tag "thumbnail03.png" %>
-          <div class="image-overlay-content">
-            <h2>Category</h2>
-          </div>
+<div id="about" class="intro">
+    <div class="row">
+        <div class="large-12 columns text-center">
+            <h2>About Me</h2>
+            <div class="line"></div>
         </div>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-        <img data-caption="caption 2 here..." src="<%= asset_path("thumbnail03.png") %>">
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-        <img data-caption="caption 2 here..." src="<%= asset_path("thumbnail02.png") %>">
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-        <img data-caption="caption 2 here..." src="<%= asset_path("thumbnail01.png") %>">
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-        <img data-caption="caption 2 here..." src="<%= asset_path("thumbnail01.png") %>">
-        <% end %>
-      </li>
-      <li>
-        <%= link_to "#" do %>
-          <img data-caption="caption 2 here..." src="<%= asset_path("thumbnail01.png") %>">
-        <% end %>
-      </li>
-    </ul>
+    </div>
+    <div class="row">
+      <div class="large-12 columns text-center">
+        <%= image_tag "profile-pic.jpg", class: "profile-avatar" %>
+      </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <p class="text-center">
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor eu nibh. Nullam mollis. Ut justo. Suspendisse potenti.
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Profile picture Here -->
+    </div>
+</div>
+<!-- Callout -->
+<div class="callout">
+    <div class="vert-text">
+        <div class="row">
+            <div class="large-12 medium-4 columns">
+                <div>
+                    <h1 class="yellow">I dwell in possibility.</h1>
+                    <h3>Emily Dickinson</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Callout -->
+
+<!-- Portfolio -->
+<div id="portfolio" class="portfolio">
+    <div class="row">
+        <div class="large-12 columns">
+            <h2 class="text-center">My Work</h2>
+            <div class="line"></div>
+            <p class="text-center p"><!-- About Work --></p>
+        </div>
+    </div>
+  <div class="row">
+    <div class="large-12 columns">
+
+      <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-3" data-clearing>
+        <li>
+          <%= link_to "#" do %>
+            <div class="image-wrapper overlay-fade-in">
+              <%= image_tag "thumb04.png" %>
+            <div class="image-overlay-content">
+              <h2>Ruby on Rails</h2>
+            </div>
+          </div>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <div class="image-wrapper overlay-fade-in">
+              <%= image_tag "thumb03.png" %>
+            <div class="image-overlay-content">
+              <h2>Design</h2>
+            </div>
+          </div>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <div class="image-wrapper overlay-fade-in">
+              <%= image_tag "thumb02.png" %>
+            <div class="image-overlay-content">
+              <h2>Design</h2>
+            </div>
+          </div>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            <div class="image-wrapper overlay-fade-in">
+              <%= image_tag "thumb01.png" %>
+            <div class="image-overlay-content">
+              <h2>Design</h2>
+            </div>
+          </div>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "#" do %>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
+<!-- /Portfolio -->
+
+<div id="myModal" class="reveal-modal small no-padding" data-reveal>
+    <img src="portfolio-1.jpg" alt="portfolio image" />
+    <br />
+    <br />
+    <h6 class="green">Lorem Ipsum</h6>
+    <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</p>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
+</div>
+<!--/Services -->
+

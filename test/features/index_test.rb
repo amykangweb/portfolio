@@ -8,4 +8,9 @@ class IndexSpecTest < Capybara::Rails::TestCase
     end
     refute_content page, "Goobye All!"
   end
+
+  test "about" do
+    visit root_path
+    page.text.must_include "About"
+  end
 end

@@ -1,62 +1,52 @@
 $(document).ready(function() {
-  var mab = (function () {
-    'use strict';
+  var status = "false";
+  $(document).foundation();
+  $('#Grid').mixitup(); // needed for our work section
+  $("#filter li").click(function () {
+      $("#filter li").removeClass("active-filter");
+      $(this).addClass("active-filter");
+  });
+  $("#menu-close").click(function (e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
+  });
 
-    return {
+  $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#sidebar-wrapper").toggleClass("active");
+  });
 
-      // Call events here
-      run: function () {
-        this.found(); // start foundation
-        this.scrolling();
-        this.filters();
-      },
-      found: function () {
-        return $(document).foundation();
-      },
-      scrolling: function () {
-        // To Top function
-        $('.toTop').on('click', function () {
-          $("html, body").animate({
-            scrollTop: 0
-          }, "slow");
-          return false;
-        });
-      },
-      filters: function () {
-        // Portfolio
-        $('ul#filter a').click(function () {
-          // Remove class
-          $('ul#filter .active').removeClass('active');
-          $(this).parent().addClass('active');
-          // find same class of menu
-          var filterVal = $(this).text().toLowerCase().replace(' ', '-');
-          if (filterVal == 'all') {
-            // If click all execute this
-            $('.portfolio_item').animate({
-              opacity: 1
-            }, 1000);
-          } else {
-            // Each all and filter values
-            $('.portfolio_item').each(function () {
-              // Hide
-              if (!$(this).hasClass(filterVal)) {
-                $(this).animate({
-                  opacity: 0.1
-                }, 1000);
-                // Show
-              } else {
-                $(this).animate({
-                  opacity: 1
-                }, 1000);
-              }
-            });
-          }
-          return false;
-        });
+  function spell_out(i) {
+      var word = "Hi there, We love to hear from you";
+      $(".spell-out").text(word.substring(0, i));
+      if (i < word.length) {
+          setTimeout("spell_out(" + (i + 1) + ")", 80);
+
       }
-    };
-  })();
+  }
+  $('#contact-info').waypoint(function () {
+      if (status == "false") {
+          status = "true";
+          $(".spell-out").css('visibility', 'visible');
+          spell_out(0);
+      }
+  }, { offset: 100 });
 
-  mab.run(); // run web
+  $(function () {
+      // var current = $("#myTabs .active a").attr("href");
+      $('.sidebar-nav a[href*=#]:not([href=#])').click(function () {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+              var target = $(this.hash);
+              target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+              if (target.length) {
+                  $('html,body').animate({
+                      scrollTop: target.offset().top
+                  }, 1000);
+                  return false;
+              }
+          }
+      });
+  });
 
 });
