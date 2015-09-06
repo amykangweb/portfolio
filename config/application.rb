@@ -17,6 +17,11 @@ Bundler.require(*Rails.groups)
 
 module Portfolio
   class Application < Rails::Application
+    config.encoding = "utf-8"
+    # http://stackoverflow.com/questions/21502608/rails-4-asset-pipeline-image-subdirectories
+    Dir.glob("#{Rails.root}/app/assets/**/**/").each do |path|
+        config.assets.paths << path
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -1,0 +1,10 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: First Post
+  body: This is my first post.
+
+two:
+  title: Second Post
+  body: This is my second post.

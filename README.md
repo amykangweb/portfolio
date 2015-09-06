@@ -7,14 +7,20 @@ By Amy Kang
   This application is an example of Rails best practices.
 </p>
 
+<h2>Information</h2>
+
+<p>
+  <img src="https://www.dropbox.com/s/jndlgnl1almwfmt/index.png?raw=1" alt="Index Page" />
+</p>
+
 <h2>Authors</h2>
 
 Amy Kang (https://github.com/amykangweb/)
 
-<h2>Further Resources</h2>
+<h2>Resources</h2>
 
 <p>
-  <a href="http://mcdowall.info/posts/gemfile-best-practices-and-discourse/">Gemfile Best Practices & Discourse</a>
+  <a href="https://www.foundationdeck.com/Themes/Details/2086/simplistic">Simplistic Responsive Theme</a>
 </p>
 
 <p>
