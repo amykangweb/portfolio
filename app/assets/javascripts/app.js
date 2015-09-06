@@ -1,8 +1,7 @@
+$(document).ready(function() {
 $(function(){
     window.prettyPrint && prettyPrint();
 }(window.jQuery));
-
-jQuery(document).ready(function($) {
 
 	//Download Link Highlight
 	if($("body").data("page")==="frontpage"){
@@ -21,6 +20,5 @@ jQuery(document).ready(function($) {
 	  e.preventDefault();
 	  $(this).tab('show');
 	})
-
 
 });
