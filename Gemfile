@@ -10,7 +10,6 @@ gem 'jquery-turbolinks'
 gem 'minitest-rails'
 gem 'rails', '4.2.4'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'sqlite3'
 gem 'turbolinks'
 
 group :assets do
@@ -19,12 +18,19 @@ group :assets do
   gem 'uglifier', '>= 1.3.0'
 end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'minitest-rails-capybara'
+  gem 'launchy'
 end
 
 group :development do
   gem 'spring'
+  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
 end
