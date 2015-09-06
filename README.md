@@ -20,7 +20,7 @@ Amy Kang (https://github.com/amykangweb/)
 <h2>Resources</h2>
 
 <p>
-  <a href="https://www.foundationmade.com/themes/item/FMHzj72j">Gemfile Best ACCALIA PORTFOLIO ONE PAGE</a><br>By Nakome
+  <a href="https://www.foundationdeck.com/Themes/Details/2086/simplistic">Simplistic Responsive Theme</a>
 </p>
 
 <p>
