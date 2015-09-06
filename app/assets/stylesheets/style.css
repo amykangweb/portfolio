@@ -12,7 +12,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 }
 
 body {
-    background: image-url(asset_path('grey.png'));
+    background: image-url('grey.png');
     margin: 0 0 190px;
 }
 
