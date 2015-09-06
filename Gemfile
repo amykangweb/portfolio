@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'd3-rails'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
