@@ -1,0 +1,9 @@
+before_deploy: "echo 'ready?'"
+deploy:
+  provider: heroku
+  api_key:
+    secure: tSE6EbHmbXEdWjHVPSnUXcgao75VtLIeFhEJbIwzdb3AM7XhRODM6mi4Vx2KxQTWqqwzcgsxUKdjhROW+9f+IjSnBfB9+P0W4AvOA7OZNnCQn3BMtdZcJMYZfY371Wz8Z9di2hBrc5hbquZBmsNE0j/vwiLGIqf0DmIbPui7pPhuhom6Zm4RpPK5XNwXpzj5UO7QOqCx0PD9Hi7lmtX2nj+F/666BIGsLtwMkFSvRZl5yUE6MC0qQVgjoqKXAK4YnU2Bys9LGD9yRJOv7rE/d9Eu96GHB6eGLKB5BKYmkU+mfgRTSorxOWHe1zamB8WffVHcHKbyHmNiC+I+ShWQjWQvB8neoMXGtFJxAvy9yv0GWqyUcJk6eZPwD17JUprrf/KK44IOZ6sI3bwAFoVEt8JxaFx/vEf5VeLbHZhRd8qupTo5PIBWsFMtA4fWju/XKzWBjci4WGzWVf26N7WBK91pl9BkFMIrMvM6sgaqAAavx51zH/39EOLoW+9XCEay814o6dd55iE/KqGjKfJ9A8emIF5ps9rtnUTxXwVQda5DJS8EU9H+9DlhjNrZdwbdJ5Qwv33jGToyBa1m4YLKAnaQcjRfGaCJQwHMyZkRT9Yg7BxiQevPsKKf0LDIRnlMsyBwNJsW41Xj707YCZwiXKpVbg4mra6xRT7RUD1RYnM=
+  app: amy-kang-portfolio
+  on:
+    branch: live
+after_deploy: "echo 'done.'"
