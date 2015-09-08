@@ -1,4 +1,3 @@
-before_deploy: echo 'ready?'
 deploy:
   provider: heroku
   api_key:
@@ -6,4 +5,4 @@ deploy:
   app: amy-kang-portfolio
   on:
     branch: travis
-after_deploy: echo 'done.'
+
