@@ -33,3 +33,6 @@ Documentation:
 # Ignore the "Use nested module/class definitions instead of compact style" cop
 Style/ClassAndModuleChildren:
   Enabled: false
+
+AllCops:
+  RunRailsCops: true

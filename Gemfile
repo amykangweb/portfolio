@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
+
 gem 'd3-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
 gem 'jbuilder', '~> 2.0'
@@ -27,6 +29,8 @@ group :development, :test do
   gem 'byebug'
   gem 'minitest-rails-capybara'
   gem 'launchy'
+  gem 'rubocop'
+  gem 'selenium-webdriver'
 end
 
 group :development do
