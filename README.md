@@ -1,16 +1,17 @@
-<h1>Portfolio Application</h1>
+<h1>Ruby on Rails Portfolio</h1>
+
 By Amy Kang
 
 <h2>Description</h2>
 
 <p>
-  This application is an example of Rails best practices.
+  Portfolio application built with Ruby on Rails.
 </p>
 
 <h2>Information</h2>
 
 <p>
-  <img src="https://www.dropbox.com/s/jndlgnl1almwfmt/index.png?raw=1" alt="Index Page" />
+  This is a portfolio application built with Ruby on Rails for the Code Fellows Ruby on Rails Development Accelerator. It includes a portfolio and blog page.
 </p>
 
 <h2>Authors</h2>
