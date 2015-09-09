@@ -6,6 +6,7 @@ feature "Deleting an article" do
     visit article_path(article)
     find('body').must_have_content "Second Post"
     click_link "Destroy"
-    # Unfinished due to Ambiguous matches xpath /html error
+    page.text.must_include "Listing Articles"
+    page.text.wont_include article.title
   end
 end
