@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 ruby '2.2.3'
 
 gem 'd3-rails'
@@ -28,8 +27,9 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'minitest-rails-capybara'
   gem 'launchy'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
   gem 'rubocop'
   gem 'selenium-webdriver'
 end
