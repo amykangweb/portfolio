@@ -3,8 +3,10 @@ require 'test_helper'
 feature 'User Signup' do
   scenario 'returns success message' do
     visit root_path
-    click_link 'Sign up'
-    fill_in "Email", with: "amy@mail.com"
+    click_link 'Sign Up'
+    within(".d_mail") do
+        fill_in "Email", with: "amy@mail.com"
+    end
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"
     click_on "Sign up"

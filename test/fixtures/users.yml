@@ -5,8 +5,16 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
+wilbur:
+  email: 'wilbur@mail.com'
+  encrypted_password: 'password'
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  id: 1
 #
-two: {}
-#  column: value
+benji:
+  email: 'benji@mail.com'
+  encrypted_password: 'password'
+  created_at: <%= Time.now %>
+  updated_at: <%= Time.now %>
+  id: 2
