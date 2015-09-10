@@ -4,7 +4,9 @@
 one:
   title: First Post
   body: This is my first post.
+  author: wilbur
 
 two:
   title: Second Post
   body: This is my second post.
+  author: wilbur

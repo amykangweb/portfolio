@@ -1,6 +1,10 @@
 require "test_helper"
 
 feature "Editing an article" do
+  before do
+    sign_in
+  end
+
   scenario "will update article with new content" do
     article = articles(:one)
     visit article_path(article)

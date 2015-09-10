@@ -21,7 +21,7 @@ feature "Editing a project" do
     page.text.must_include "D3"
   end
 
-  scenario "with incorrect values returns error message" do
+  it "with incorrect values returns error message" do
     within(".p_name") do
       fill_in "Name", with: "The"
     end

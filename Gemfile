@@ -32,6 +32,7 @@ group :development, :test do
   gem 'minitest-reporters'
   gem 'rubocop'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
 end
 
 group :development do
