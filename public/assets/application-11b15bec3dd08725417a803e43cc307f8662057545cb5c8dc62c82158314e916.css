@@ -8505,6 +8505,11 @@ th.hide-for-touch {
   transition-delay: 0.1s; }
 .overlay-fade-in-new-background:hover .button {
   transition-delay: 0.2s; }
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
 /* Global Styles */
 
 @font-face {
@@ -8520,7 +8525,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 }
 
 body {
-    background: image-url('grey.png');
+    background-image: url('https://www.dropbox.com/s/h9qmfd4t2z5osa8/grey.png?raw=1');
     margin: 0 0 190px;
 }
 
