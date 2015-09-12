@@ -1,0 +1,13 @@
+<h1><%= current_user.email %>'s Control Panel</h1>
+
+<h2>All Articles</h2>
+
+<% @articles.each do |article| %>
+  <p>
+    <%= link_to article.title, article %>
+    <span>
+      <% if article.published %>
+        <em>published</em>
+      <% end %>
+  </p>
+<% end %>

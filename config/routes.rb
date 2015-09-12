@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users do
+    get :control
+  end
   resources :articles
   resources :projects
   root 'welcome#index'

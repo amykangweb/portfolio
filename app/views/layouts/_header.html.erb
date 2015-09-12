@@ -3,14 +3,26 @@
 <div id="sidebar-wrapper">
     <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
     <ul class="sidebar-nav">
-        <li><a href="#top">Home</a>
+        <li><%= link_to "Home", root_path(:anchor => "top") %>
         </li>
-        <li><a href="#about">About</a>
+        <li><%= link_to "About", root_path(:anchor => "about") %>
         </li>
-        <li><a href="#portfolio">Portfolio</a>
+        <li><%= link_to "Portfolio", root_path(:anchor => 'portfolio') %>
         </li>
-        <li><a href="#contact-info">Contact</a>
+        <li><%= link_to "Blog", articles_path %>
         </li>
+        <li><%= link_to "Contact", root_path(:anchor => 'contact-info') %>
+        </li>
+        <% if user_signed_in? %>
+          <% if current_user.author? %>
+              <li><%= link_to "Control Panel", user_control_path(current_user) %></li>
+          <% end %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            </li>
+        <% else %>
+            <li><%= link_to "Sign In", new_user_session_path %>
+            </li>
+        <% end %>
     </ul>
 </div>
 <!-- /Side Menu -->

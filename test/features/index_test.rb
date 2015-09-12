@@ -1,7 +1,7 @@
 require "test_helper"
 
-class IndexSpecTest < Capybara::Rails::TestCase
-  test "sanity" do
+feature "Visiting index page" do
+  it "has correct header test" do
     visit root_path
     within(".header") do
       page.text.must_include "Amy Kang"

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-
 ruby '2.2.3'
 
 gem 'd3-rails'
+gem 'devise'
 gem 'font-awesome-rails'
 gem 'foundation-icons-sass-rails'
 gem 'foundation-rails'
@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'minitest-rails'
+gem 'pundit'
 gem 'rails', '4.2.4'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'
@@ -27,10 +28,12 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'minitest-rails-capybara'
   gem 'launchy'
+  gem 'minitest-rails-capybara'
+  gem 'minitest-reporters'
   gem 'rubocop'
   gem 'selenium-webdriver'
+  gem 'pry-rails'
 end
 
 group :development do
