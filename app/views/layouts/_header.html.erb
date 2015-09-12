@@ -14,7 +14,10 @@
         <li><%= link_to "Contact", root_path(:anchor => 'contact-info') %>
         </li>
         <% if user_signed_in? %>
-            <li class="sign-out"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "sign-out-bye" %>
+          <% if current_user.author? %>
+              <li><%= link_to "Control Panel", user_control_path(current_user) %></li>
+          <% end %>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
             </li>
         <% else %>
             <li><%= link_to "Sign In", new_user_session_path %>

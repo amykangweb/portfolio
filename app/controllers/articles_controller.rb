@@ -4,7 +4,11 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    if user_signed_in? && current_user.role == "editor"
+      @articles = Article.all
+    else
+      @articles = Article.where(published: true)
+    end
   end
 
   # GET /articles/1
@@ -15,10 +19,12 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    authorize @article
   end
 
   # GET /articles/1/edit
   def edit
+    authorize @article
   end
 
   # POST /articles
@@ -26,6 +32,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     respond_to do |format|
+      authorize @article
       if @article.save
         current_user.articles << @article
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -41,6 +48,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
+      authorize @article
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
@@ -54,10 +62,13 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    @article.destroy
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
-      format.json { head :no_content }
+    authorize @article
+    if @article.destroy
+      flash[:notice] = "Article was successfully destroyed."
+      redirect_to articles_path
+    else
+      flash[:error] = "You are not authorized."
+      redirect_to root_path
     end
   end
 
@@ -69,6 +80,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, (:published if current_user.role == "editor"))
     end
 end

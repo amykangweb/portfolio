@@ -10,6 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'minitest-rails'
+gem 'pundit'
 gem 'rails', '4.2.4'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'turbolinks'

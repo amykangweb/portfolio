@@ -8,7 +8,19 @@
 wilbur:
   email: 'wilbur@mail.com'
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
-#
+  role: "author"
+
 benji:
   email: 'benji@mail.com'
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: nil
+
+author:
+  email: "author@example.com"
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: "author"
+
+editor:
+  email: "editor@example.com"
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: "editor"

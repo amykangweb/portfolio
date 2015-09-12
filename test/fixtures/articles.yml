@@ -5,8 +5,16 @@ one:
   title: First Post
   body: This is my first post.
   author: wilbur
+  published: true
 
 two:
   title: Second Post
   body: This is my second post.
   author: wilbur
+  published: false
+
+three:
+  title: Third Post
+  body: This is my third post.
+  author: editor
+  published: true

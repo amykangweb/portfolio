@@ -3,6 +3,11 @@
   <%= @article.title %>
 </p>
 
+<p id="status">
+  <b>Status:</b>
+  <%= @article.published? ? "Published" : "Unpublished" %>
+</p>
+
 <p id="author">
   <b>By:</b>
   <%= @article.author.email %>
@@ -13,6 +18,13 @@
   <%= @article.body %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |<%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<% if user_signed_in? %>
+  <% if policy(@article).update? %>
+    <p><%= link_to 'Edit', edit_article_path(@article) %></p>
+  <% end %>
+  <% if policy(@article).destroy? %>
+    <p><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <% end %>
+<% end %>
 
 <%= link_to 'Back', articles_path %>
