@@ -18,13 +18,11 @@
   <%= @article.body %>
 </p>
 
-<% if user_signed_in? %>
-  <% if policy(@article).update? %>
-    <p><%= link_to 'Edit', edit_article_path(@article) %></p>
-  <% end %>
-  <% if policy(@article).destroy? %>
-    <p><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
+<% if policy(@article).update? %>
+  <p><%= link_to 'Edit', edit_article_path(@article) %></p>
+<% end %>
+<% if policy(@article).is_editor? %>
+  <p><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
 <% end %>
 
 <%= link_to 'Back', articles_path %>
