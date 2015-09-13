@@ -12,7 +12,6 @@ feature "Deleting an article" do
     visit article_path(article)
     find('body').must_have_content "First Post"
     click_link "Destroy"
-    page.text.must_include "Listing Articles"
     page.text.must_include "Article was successfully destroyed."
     page.text.wont_include article.title
   end

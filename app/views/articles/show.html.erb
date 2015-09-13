@@ -1,30 +1,41 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<%= render 'articles_header' %>
 
-<p id="status">
-  <b>Status:</b>
-  <%= @article.published? ? "Published" : "Unpublished" %>
-</p>
+<div class="services text-center">
 
-<p id="author">
-  <b>By:</b>
-  <%= @article.author.email %>
-</p>
+  <h1><%= @article.title %>
+    &nbsp;
+    <% if !@article.published %>
+      <i class="fi-lock" title="Unpublished"></i>
+    <% end %>
+  </h1>
 
-<p>
-  <strong>Body:</strong>
-  <%= @article.body %>
-</p>
+  <h4 id="author">
+    <%= "by #{@article.author.email} / #{@article.created_at.strftime('%b %d %Y')}" %>
+  </h4>
 
-<% if user_signed_in? %>
-  <% if policy(@article).update? %>
-    <p><%= link_to 'Edit', edit_article_path(@article) %></p>
-  <% end %>
-  <% if policy(@article).destroy? %>
-    <p><%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-  <% end %>
-<% end %>
+  <div class="line"></div>
 
-<%= link_to 'Back', articles_path %>
+  <div class="article-body text-left">
+    <%= raw sanitize(simple_format(@article.body)) %>
+  </div>
+
+  <div class="article-control">
+    <% if policy(@article).update? %>
+      <%= link_to 'Edit', edit_article_path(@article) %>
+    <% end %>
+    &nbsp;&nbsp;
+    <% if policy(@article).is_editor? %>
+      <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+
+  <h5 class="prev-home-next">
+    <% if @article.previous %>
+      <p><%= link_to "&#8592; #{@article.previous.title}".html_safe, @article.previous %></p>
+    <% end %>
+
+    <% if @article.next %>
+      <p><%= link_to "#{@article.next.title} &#8594;".html_safe, @article.next %></p>
+    <% end %>
+  </h5>
+</div>

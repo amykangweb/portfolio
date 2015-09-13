@@ -6,23 +6,15 @@ class ArticlePolicy < ApplicationPolicy
     @article = article
   end
 
-  def new?
-    @user.editor? || @user.author?
-  end
-
   def create?
-    @user.editor? || @user.author?
+    @user && (@user.editor? || @user.author?)
   end
 
   def update?
-    @article.author == @user || @user.editor?
+    @user && (@article.author == @user || @user.editor?)
   end
 
-  def publish?
-    @user.editor?
-  end
-
-  def destroy?
-    @user.editor?
+  def is_editor?
+    @user && @user.editor?
   end
 end
