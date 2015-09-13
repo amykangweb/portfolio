@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    authorize @article
+    authorize @article, :create?
   end
 
   # GET /articles/1/edit
@@ -62,7 +62,7 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    authorize @article
+    authorize @article, :is_editor?
     if @article.destroy
       flash[:notice] = "Article was successfully destroyed."
       redirect_to articles_path

@@ -88,11 +88,12 @@ a {
 
 /*color*/
 .yellow-bg {
-    background-color: #DBBA04;
+    background-color: #DBBA04 !important;
 }
 
     .yellow-bg:hover {
-        background-color: #D3B408;
+        background-color: #D3B408 !important;
+        color: #fff !important;
     }
 
 .yellow {
@@ -244,8 +245,6 @@ a {
     margin: 5px 5px 0 0;
 }
 
-
-
 /* Full Page Image Header Area */
 
 .header {
@@ -253,7 +252,7 @@ a {
     height: 100%;
     width: 100%;
     position: relative;
-    background: url(bg2.jpg) no-repeat center center fixed;
+    background: url(bg02.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -266,12 +265,7 @@ a {
     padding: 50px 0;
 }
 
-/* Services */
-
-.service-top {
-    top: 78px;
-    position: relative;
-}
+/* Services: Styles used for Blog */
 
 .full-width {
     max-width: 100%;
@@ -281,34 +275,67 @@ a {
         padding: 0px;
     }
 
+.blog-page {
+  background: url('coffee-book01.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 300px;
+}
+
+.blog-page h1 a {
+  color: #fff;
+}
+
+.blog-page h1 a:hover {
+  color: #D3B408;
+}
+
 .services {
     background-image: url('paper_fibers.png');
-    padding: 50px 0;
+    padding: 50px 30px 50px 30px;
+    margin-bottom: 40px;
 }
 
-.service-body {
-    margin-top: 100px;
+.new-article {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
-.service-item {
-    width: 80%;
-    margin-left: 10px;
+.services h2 a {
+  color: #000;
+  font-weight: bold;
 }
 
-    .service-item h4 {
-        margin-top: -6px;
-    }
+.services a:hover {
+  color: #ffd800;
+}
 
-i.service-icon {
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    display: inline-block;
-    font-size: 56px;
-    width: 140px;
-    height: 140px;
-    line-height: 136px;
-    vertical-align: middle;
-    text-align: center;
+/* Single Article Page */
+
+.article-body {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.article-control a {
+  color: #D3B408 !important;
+}
+
+.prev-home-next a {
+  color: #000;
+  font-size: 18px;
+}
+
+.prev-home-next a:hover {
+  color: #D3B408 !important;
+}
+
+.prev-home-next p {
+  display: inline-block;
+  margin: 20px 10% 0 10% !important;
 }
 
 /* Callout */
@@ -318,7 +345,7 @@ i.service-icon {
     display: table;
     min-height: 300px;
     width: 100%;
-    background: url(callout.jpg) no-repeat center center fixed;
+    background: url(callout-darker.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -343,46 +370,6 @@ i.service-icon {
     border-right: 1px solid #e1e1e1;
     text-align: center;
 }
-
-    .about-item img {
-        -webkit-transition: opacity 1s ease-in-out;
-        -moz-transition: opacity 1s ease-in-out;
-        -o-transition: opacity 1s ease-in-out;
-        -ms-transition: opacity 1s ease-in-out;
-        transition: opacity 1s ease-in-out;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        border-radius: 4px;
-    }
-
-    .about-item .icon p {
-        margin-top: 6px;
-    }
-
-    .about-item .icon {
-        transition: all .4s ease-in-out;
-        -webkit-transition: all .4s ease-in-out; /** Chrome & Safari **/
-        -moz-transition: all .4s ease-in-out; /** Firefox **/
-        -o-transition: all .4s ease-in-out; /** Opera **/
-    }
-
-    .about-item:hover .icon {
-        transform: translate(-30px,0);
-        -webkit-transform: translate(0px,-120px); /** Chrome & Safari **/
-        -o-transform: translate(-30px,0); /** Opera **/
-        -moz-transform: translate(-30px,0); /** Firefox **/
-    }
-
-    .about-item:hover .about-body {
-        transform: translate(-30px,0);
-        -webkit-transform: translate(0px,-120px); /** Chrome & Safari **/
-        -o-transform: translate(-30px,0); /** Opera **/
-        -moz-transform: translate(-30px,0); /** Firefox **/
-    }
-
-    .about-item:hover img {
-        opacity: 0;
-    }
 
 .about-body {
     transition: all .4s ease-in-out;

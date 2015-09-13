@@ -19,7 +19,7 @@
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
-  <% if policy(@article).publish? %>
+  <% if policy(@article).is_editor? %>
     <div class="field">
       <%= f.label :published, title: "Is this article published?", data: { tooltip: true } %>
       <%= f.check_box :published %>

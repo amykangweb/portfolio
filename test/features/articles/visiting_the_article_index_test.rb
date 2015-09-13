@@ -6,7 +6,6 @@ feature "Visiting the Article Index" do
     article.save
     visit articles_path
     page.must_have_content article.title
-    page.must_have_content article.body
   end
 
   scenario "only shows published articles for non-editors" do
