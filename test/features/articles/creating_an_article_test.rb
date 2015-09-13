@@ -28,7 +28,7 @@ feature "Creating an Article" do
   scenario "must show status as unpublished" do
     sign_in(:wilbur)
     create_article
-    page.text.must_include "Status: Unpublished"
+    assert page.has_css?(".fi-lock"), "Expected to find unpublished icon, none found."
   end
 
   scenario "returns error message for visitors" do
@@ -61,6 +61,6 @@ feature "Creating an Article" do
     fill_in "Body", with: articles(:one).body
     check "Published"
     click_on "Create Article"
-    page.text.must_include "Status: Published"
+    assert page.has_no_css?(".fi-lock"), "Expected not to find lock icon, icon found."
   end
 end
