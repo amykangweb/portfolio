@@ -16,6 +16,20 @@ body {
     margin: 0 0 190px;
 }
 
+.alert-box {
+  border-radius: 0 !important;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.notice {
+  background: #00B88A !important;
+}
+
+.error {
+  background: #FF3030 !important;
+}
+
 p {
     line-height: 20px;
 }
@@ -294,7 +308,7 @@ a {
 
 .services {
     background-image: url('paper_fibers.png');
-    padding: 50px 30px 50px 30px;
+    padding: 50px 50px 50px 50px;
     margin-bottom: 40px;
 }
 
@@ -316,8 +330,8 @@ a {
 /* Single Article Page */
 
 .article-body {
-  font-size: 18px;
-  margin-bottom: 50px;
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 .article-control a {
