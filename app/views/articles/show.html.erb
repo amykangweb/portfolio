@@ -15,11 +15,13 @@
 
   <div class="line"></div>
 
-  <div class="article-body text-left">
-    <%= raw sanitize(simple_format(@article.body)) %>
+  <div class="row">
+    <div class="large-12 columns article-body text-left">
+      <%= raw sanitize(simple_format(@article.body)) %>
+    </div>
   </div>
 
-  <div class="article-control">
+  <div class="article-control link_color">
     <% if policy(@article).update? %>
       <%= link_to 'Edit', edit_article_path(@article) %>
     <% end %>

@@ -308,7 +308,7 @@ a {
 
 .services {
     background-image: url('paper_fibers.png');
-    padding: 50px 50px 50px 50px;
+    padding: 50px 0 50px 0;
     margin-bottom: 40px;
 }
 
@@ -334,7 +334,7 @@ a {
   margin-bottom: 40px;
 }
 
-.article-control a {
+.link_color a {
   color: #D3B408 !important;
 }
 
