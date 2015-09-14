@@ -13,3 +13,13 @@ class User < ActiveRecord::Base
     role == "author"
   end
 end
+
+class NullUser
+  def editor?
+    false
+  end
+
+  def author?
+    false
+  end
+end
