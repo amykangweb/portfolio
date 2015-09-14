@@ -1,0 +1,8 @@
+<!-- Flash message code found at http://railsapps.github.io/rails-foundation.html -->
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'notice' : 'error' %>">
+      <%= content_tag :div, msg %>
+    </div>
+  <% end %>
+<% end %>
