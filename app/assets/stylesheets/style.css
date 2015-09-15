@@ -324,7 +324,11 @@ a {
 }
 
 .services a:hover {
-  color: #ffd800;
+    color: #D3B408 !important;
+}
+
+.article-space {
+  margin-bottom: 70px;
 }
 
 /* Single Article Page */
@@ -341,10 +345,6 @@ a {
 .prev-home-next a {
   color: #000;
   font-size: 18px;
-}
-
-.prev-home-next a:hover {
-  color: #D3B408 !important;
 }
 
 .prev-home-next p {

@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  default_scope -> { order(created_at: :desc) }
+  default_scope -> { order('created_at DESC') }
   mount_uploader :thumbnail, ImageUploader
   mount_uploader :image, ImageUploader
   mount_uploader :extra, ImageUploader

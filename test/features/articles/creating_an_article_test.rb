@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "Creating an Article" do
-
   scenario "returns success if user is an author" do
     sign_in(:wilbur)
     create_article

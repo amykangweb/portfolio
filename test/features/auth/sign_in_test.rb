@@ -16,7 +16,6 @@ feature "Omniauth" do
     Capybara.current_session.driver.request.env['omniauth.auth'] = OmniAuth.config.mock_auth[:github]
 
     click_on "Sign in with Github"
-    save_and_open_page
     page.must_have_content "test_github_user, you are signed in!"
   end
 end
