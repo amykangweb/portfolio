@@ -9,14 +9,14 @@ class Article < ActiveRecord::Base
   end
 
   def next
-    Article.where(published: true).select do |article|
+    Article.where(published: true).reverse.find do |article|
       article.id > self.id
-    end.last
+    end
   end
 
   def previous
-    Article.where(published: true).select do |article|
+    Article.where(published: true).find do |article|
       article.id < self.id
-    end.first
+    end
   end
 end

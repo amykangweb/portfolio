@@ -11,6 +11,13 @@ class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
   end
 
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << :name
+    devise_parameter_sanitizer.for(:account_update) << :name
+  end
+
   private
 
   def after_sign_in_path_for(resource)

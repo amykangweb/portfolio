@@ -1,7 +1,6 @@
 require "test_helper"
 
 feature "Creating an Article" do
-
   scenario "returns success if user is an author" do
     sign_in(:wilbur)
     create_article
@@ -22,7 +21,7 @@ feature "Creating an Article" do
     sign_in(:wilbur)
     create_article
     page.has_css? "#author"
-    page.text.must_include @user.email
+    page.text.must_include @user.name
   end
 
   scenario "must show status as unpublished" do

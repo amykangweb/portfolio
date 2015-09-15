@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    if user_signed_in? && current_user.role == "editor"
+    if user_signed_in? && current_user.editor?
       @articles = Article.all
     else
       @articles = Article.where(published: true)
