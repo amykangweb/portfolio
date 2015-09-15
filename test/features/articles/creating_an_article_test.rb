@@ -22,7 +22,7 @@ feature "Creating an Article" do
     sign_in(:wilbur)
     create_article
     page.has_css? "#author"
-    page.text.must_include @user.email
+    page.text.must_include @user.name
   end
 
   scenario "must show status as unpublished" do
