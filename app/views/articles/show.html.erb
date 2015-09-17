@@ -2,42 +2,24 @@
 
 <div class="services text-center">
 
-  <h1><%= @article.title %>
-    &nbsp;
-    <% if !@article.published %>
-      <i class="fi-lock" title="Unpublished"></i>
-    <% end %>
-  </h1>
+  <%= render 'article' %>
 
-  <h4 id="author">
-    <%= "by #{@article.author.name} / #{@article.created_at.strftime('%b %d %Y')}" %>
-  </h4>
+  <%= render 'controls' %>
 
-  <div class="line"></div>
+  <%= render 'prev_next' %>
+</div>
 
-  <div class="row">
-    <div class="large-12 columns article-body text-left">
-      <%= raw sanitize(simple_format(@article.body)) %>
+<%= render 'callout' %>
+
+<div class="large-8 large-centered medium-10 medium-centered columns text-left comments-form">
+  <h2>Comment</h2>
+
+  <%= render partial: 'comments/form', article: @article %>
+
+  <% if !@article.comments.blank? %>
+    <div class="comments">
+      <h5><%= "#{@article.comments.count} Comments" %></h5>
+      <%= render "comments" %>
     </div>
-  </div>
-
-  <div class="article-control link_color">
-    <% if policy(@article).update? %>
-      <%= link_to 'Edit', edit_article_path(@article) %>
-    <% end %>
-    &nbsp;&nbsp;
-    <% if policy(@article).is_editor? %>
-      <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-  </div>
-
-  <h5 class="prev-home-next">
-    <% if @article.previous %>
-      <p><%= link_to "&#8592; #{@article.previous.title}".html_safe, @article.previous %></p>
-    <% end %>
-
-    <% if @article.next %>
-      <p><%= link_to "#{@article.next.title} &#8594;".html_safe, @article.next %></p>
-    <% end %>
-  </h5>
+  <% end %>
 </div>

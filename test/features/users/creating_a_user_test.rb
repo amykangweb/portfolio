@@ -6,7 +6,7 @@ feature 'User Signup' do
     click_link "Sign In"
     click_link "Sign up"
     within(".d_mail") do
-      fill_in "Email", with: "amy@mail.com"
+      fill_in "Email", with: "kitty@mail.com"
     end
     fill_in "Password", with: "password"
     fill_in "Password confirmation", with: "password"

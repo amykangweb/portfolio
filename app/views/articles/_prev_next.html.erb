@@ -1,0 +1,9 @@
+<h5 class="prev-home-next">
+  <% if @article.previous %>
+    <p><%= link_to "&#8592; #{@article.previous.title}".html_safe, @article.previous %></p>
+  <% end %>
+
+  <% if @article.next %>
+    <p><%= link_to "#{@article.next.title} &#8594;".html_safe, @article.next %></p>
+  <% end %>
+</h5>

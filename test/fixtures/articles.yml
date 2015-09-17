@@ -18,3 +18,9 @@ three:
   body: This is my third post.
   author: editor
   published: true
+
+four:
+  title: Fourth Post
+  body: This is my fourth post.
+  author: amy
+  published: true

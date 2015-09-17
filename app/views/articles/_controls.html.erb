@@ -1,0 +1,9 @@
+<div class="article-control link_color">
+  <% if policy(@article).update? %>
+    <%= link_to 'Edit', edit_article_path(@article) %>
+  <% end %>
+  &nbsp;&nbsp;
+  <% if policy(@article).is_editor? %>
+    <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</div>

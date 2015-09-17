@@ -16,9 +16,6 @@ class ActiveSupport::TestCase
   def sign_in(role = :editor)
     @user = users(role)
     visit new_user_session_path
-    within(".d_name") do
-      fill_in "Name", with: @user.name
-    end
     within(".d_mail") do
         fill_in "Email", with: @user.email
     end
