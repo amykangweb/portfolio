@@ -5,13 +5,13 @@ By Amy Kang
 <h2>Description</h2>
 
 <p>
-  Portfolio application built with Ruby on Rails.
+  My portfolio site built with Ruby on Rails. Includes samples of my work and a blog. Authentication is handled by Devise and Omniauth. You can create an account or sign in with your Github account. It is still under construction!
 </p>
 
 <h2>Information</h2>
 
 <p>
-  This is a portfolio application built with Ruby on Rails for the Code Fellows Ruby on Rails Development Accelerator. It includes a portfolio and blog page.
+  <img src="https://www.dropbox.com/s/t9iwijcyhdxcuvj/portfolio.png?raw=1">
 </p>
 
 <h2>Authors</h2>
@@ -22,8 +22,4 @@ Amy Kang (https://github.com/amykangweb/)
 
 <p>
   <a href="https://www.foundationdeck.com/Themes/Details/2086/simplistic">Simplistic Responsive Theme</a>
-</p>
-
-<p>
-  <a href="https://github.com/enilsen16/Eefgilm">Eefgilm: A gem for cleaning up your Gemfile</a>
 </p>

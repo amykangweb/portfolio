@@ -1,0 +1,18 @@
+<h1><%= @article.title %>
+  &nbsp;
+  <% if !@article.published %>
+    <i class="fi-lock" title="Unpublished"></i>
+  <% end %>
+</h1>
+
+<h4 id="author">
+  <%= "by #{@article.author.name} / #{@article.created_at.strftime('%b %d %Y')}" %>
+</h4>
+
+<div class="line"></div>
+
+<div class="row">
+  <div class="large-12 columns article-body text-left">
+    <%= raw sanitize(simple_format(@article.body)) %>
+  </div>
+</div>

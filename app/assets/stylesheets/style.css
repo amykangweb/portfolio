@@ -308,8 +308,8 @@ a {
 
 .services {
     background-image: url('paper_fibers.png');
-    padding: 50px 0 50px 0;
-    margin-bottom: 40px;
+    padding: 50px 0 30px 0;
+    margin-bottom: 0px;
 }
 
 .new-article {
@@ -335,11 +335,15 @@ a {
 
 .article-body {
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .link_color a {
   color: #D3B408 !important;
+}
+
+.prev-home-next {
+  margin-bottom: 40px;
 }
 
 .prev-home-next a {
@@ -364,6 +368,21 @@ a {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.callout-footer {
+  min-height: 200px;
+  background: url(callout-rain.jpg) no-repeat center center fixed;
+  margin-bottom: 70px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.callout-footer h2 {
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /*about*/
@@ -425,6 +444,7 @@ a {
 
 .portfolio {
     padding: 50px 0;
+    margin-bottom: 10px;
 }
 
 

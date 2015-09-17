@@ -1,0 +1,39 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+.comments-form {
+  margin-top: -25px;
+  margin-bottom: 70px;
+}
+
+.comments {
+  margin: 30px 0 70px 0;
+  background: #EBEBEB;
+  padding: 15px 20px 20px 20px;
+  .avatar {
+    clear: left;
+    float: left;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+
+  h5 {
+    font-weight: bold;
+  }
+
+  blockquote {
+    position: relative;
+    clear: left;
+    padding: 20px;
+    border: none;
+    min-height: 150px;
+    background: #F8F8F8;
+    .comment-controls {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+  }
+}

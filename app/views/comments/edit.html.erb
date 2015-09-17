@@ -1,0 +1,27 @@
+<h1>Editing Comment</h1>
+
+<%= form_for(@comment, url: article_comment_path) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :body, 'Comment' %>
+    <%= f.text_area :body, rows: '5' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "button radius yellow-bg" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', article_comment_path(@article, @comment) %>
+</div>
