@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917082702) do
+ActiveRecord::Schema.define(version: 20150918205925) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150917082702) do
     t.datetime "updated_at",                 null: false
     t.integer  "author_id"
     t.boolean  "published",  default: false
+    t.string   "featured"
   end
 
   create_table "comments", force: :cascade do |t|

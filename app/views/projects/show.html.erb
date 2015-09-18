@@ -1,9 +1,22 @@
-<h2><%= @project.name %></h2>
-<p>Technologies used: <%= @project.technologies_used %></p>
+<%= render 'projects_header' %>
 
-<p><%= image_tag @project.image.url, id: 'image_one' %></p>
-<p><%= image_tag @project.extra.url, id: 'image_two' %></p>
+  <div class="services text-center">
 
-<p><%= link_to 'Edit', edit_project_path(@project) %></p>
-<p><%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-<p><%= link_to 'Back', projects_path %></p>
+    <h1><%= @project.name %></h1>
+    <h4 id="author"><%= @project.technologies_used %></h4>
+
+    <div class="line"></div>
+
+    <p><%= image_tag @project.image.url, id: 'image_one' %></p>
+    <p><%= image_tag @project.extra.url, id: 'image_two' %></p>
+
+    <div class="article-control link_color">
+      <% if policy(@project).is_editor? %>
+          <%= link_to 'Edit', edit_project_path(@project) %>
+          &nbsp;&nbsp;
+          <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render 'layouts/callout' %>

@@ -13,6 +13,7 @@
 
 <div class="row">
   <div class="large-12 columns article-body text-left">
-    <%= raw sanitize(simple_format(@article.body)) %>
+    <%= image_tag(@article.featured.url, id: 'featured_image') if @article.featured? %>
+    <p><%= raw sanitize(simple_format(@article.body)) %></p>
   </div>
 </div>

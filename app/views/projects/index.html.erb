@@ -1,15 +1,18 @@
-<h2>My Portfolio</h2>
-<ul>
-<% @projects.each do |project| %>
-  <li class="project" id="<%= dom_id(project) %>">
-    <h3><%= project.name %></h3>
-    <p><%= project.technologies_used %></p>
-    <div class="nav">
-      <%= link_to 'Show', project %> |
-      <%= link_to 'Edit', edit_project_path(project) %> |
-      <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
-    </div>
-<% end %>
-</ul>
-<br />
-<%= link_to 'New Project', new_project_path %>
+<%= render 'projects_header' %>
+
+<div class="services text-center">
+  <div class="article">
+    <% @projects.each do |project| %>
+      <p>
+        <h2><%= link_to project.name, project %></h2>
+        <h5><%= project.technologies_used %></h5>
+      </p>
+    <% end %>
+  </div>
+  <br>
+  <% if user_signed_in? && current_user.editor? %>
+    <%= link_to 'New Project', new_project_path, class: "button radius yellow-bg new-article" %>
+  <% end %>
+</div>
+
+<%= render 'layouts/callout' %>

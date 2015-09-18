@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   def index
     @projects = Project.all
@@ -10,10 +11,12 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    authorize @project, :is_editor?
   end
 
   def create
     @project = Project.new(project_params)
+    authorize @project, :is_editor?
     if @project.save
       flash[:notice] = "Project has been created."
       redirect_to @project
@@ -24,9 +27,11 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    authorize @project, :is_editor?
   end
 
   def update
+    authorize @project, :is_editor?
     if @project.update_attributes(project_params)
       redirect_to @project, notice: 'Project was sucessfully updated.'
     else
@@ -35,6 +40,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    authorize @project, :is_editor?
     @project.destroy
     flash[:notice] = "Project was successfully destroyed."
     redirect_to projects_path

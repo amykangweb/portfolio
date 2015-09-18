@@ -1,37 +1,39 @@
-<%= form_for(@project, html: { multipart: true}) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<div class="large-8 large-centered medium-10 medium-centered columns text-left">
+  <%= form_for(@project, html: { multipart: true}) do |f| %>
+    <% if @project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-        <% @project.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% @project.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field p_name">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field p_tech">
+      <%= f.label :technologies_used %>
+      <%= f.text_area :technologies_used %>
+    </div>
+    <div class="field">
+      <%= f.label :thumbnail %>
+      <%= f.file_field :thumbnail, accept: 'image/jpeg,image/gif,image/png' %>
+    </div>
+    <div class="field">
+      <%= f.label :image, accept: 'image/jpeg,image/gif,image/png' %>
+      <%= f.file_field :image %>
+    </div>
+    <div class="field">
+      <%= f.label :extra, "Additional Image(optional)", accept: 'image/jpeg,image/gif,image/png' %>
+      <%= f.file_field :extra %>
+    </div>
+    <div class="action">
+      <%= f.submit class: "button radius expand yellow-bg" %>
     </div>
   <% end %>
-
-  <div class="field p_name">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field p_tech">
-    <%= f.label :technologies_used %><br />
-    <%= f.text_area :technologies_used %>
-  </div>
-  <div class="field">
-    <%= f.label :thumbnail %><br>
-    <%= f.file_field :thumbnail, accept: 'image/jpeg,image/gif,image/png' %>
-  </div>
-  <div class="field">
-    <%= f.label :image, accept: 'image/jpeg,image/gif,image/png' %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :extra, "Additional Image(optional)", accept: 'image/jpeg,image/gif,image/png' %><br>
-    <%= f.file_field :extra %>
-  </div>
-  <div class="action">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

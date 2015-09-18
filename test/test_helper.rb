@@ -30,6 +30,7 @@ class ActiveSupport::TestCase
     page.must_have_content "New Article"
     fill_in "Title", with: @article.title
     fill_in "Body", with: @article.body
+    page.attach_file('article[featured]', Rails.root + 'test/fixtures/cat.jpeg')
     click_on "Create Article"
   end
 end

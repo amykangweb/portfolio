@@ -5,6 +5,7 @@ feature "Creating an Article" do
     sign_in(:wilbur)
     create_article
     page.must_have_content "Article was successfully created."
+    page.find('#featured_image')['src'].must_include 'cat.jpeg'
     page.must_have_content @article.title
     page.must_have_content @article.body
   end

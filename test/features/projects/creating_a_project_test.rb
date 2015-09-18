@@ -1,12 +1,11 @@
 require "test_helper"
 
 feature "Adding portfolio item" do
-  before do
-    visit projects_path
-    click_on "New Project"
-  end
 # http://stackoverflow.com/questions/24853066/having-trouble-testing-upload-file-with-capybara-attach-file-method
   scenario "returns success message and correct content" do
+    sign_in(:editor)
+    visit projects_path
+    click_on "New Project"
     within(".p_name") do
       fill_in "Name", with: "Code Fellows Project"
     end
@@ -27,6 +26,9 @@ feature "Adding portfolio item" do
   end
 
   scenario "returns error message when name is blank" do
+    sign_in(:editor)
+    visit projects_path
+    click_on "New Project"
     within(".p_name") do
       fill_in "Name", with: ""
     end
@@ -37,6 +39,9 @@ feature "Adding portfolio item" do
   end
 
   scenario "returns error message when technologies field is blank" do
+    sign_in(:editor)
+    visit projects_path
+    click_on "New Project"
     within(".p_tech") do
       fill_in "Technologies used", with: ""
     end

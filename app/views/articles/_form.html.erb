@@ -1,5 +1,5 @@
 <div class="large-8 large-centered medium-10 medium-centered columns text-left">
-  <%= form_for(@article) do |f| %>
+  <%= form_for(@article, html: { multipart: true }) do |f| %>
     <% if @article.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
@@ -19,6 +19,10 @@
     <div class="field">
       <%= f.label :body %>
       <%= f.text_area :body, rows: "12" %>
+    </div>
+    <div class="field">
+      <%= f.label :featured, "Featured Image(optional)" %>
+      <%= f.file_field :featured, accept: 'image/jpeg,image/gif,image/png' %>
     </div>
     <% if policy(@article).is_editor? %>
       <div class="field">
