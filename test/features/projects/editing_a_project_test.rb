@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "Editing a project" do
   before do
+    sign_in(:editor)
     project = projects(:one)
     visit project_path(project)
     click_link "Edit"
