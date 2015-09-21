@@ -342,6 +342,10 @@ a {
   margin-top: 30px;
 }
 
+.article-body a {
+  color: #D3B408 !important;
+}
+
 .link_color a {
   color: #D3B408 !important;
 }
