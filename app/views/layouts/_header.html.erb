@@ -7,13 +7,16 @@
         </li>
         <li><%= link_to "About", root_path(:anchor => "about") %>
         </li>
-        <li><%= link_to "Portfolio", root_path(:anchor => 'portfolio') %>
+        <li><%= link_to "Portfolio", projects_path %>
         </li>
         <li><%= link_to "Blog", articles_path %>
         </li>
         <li><%= link_to "Contact", root_path(:anchor => 'contact-info') %>
         </li>
         <% if user_signed_in? %>
+          <% if current_user.editor? %>
+            <li><%= link_to "New Project", new_project_path %></li>
+          <% end %>
           <% if current_user.author? %>
               <li><%= link_to "Control Panel", user_control_path(current_user) %></li>
           <% end %>

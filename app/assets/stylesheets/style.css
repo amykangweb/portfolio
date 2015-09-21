@@ -360,6 +360,23 @@ a {
   margin: 20px 10% 0 10% !important;
 }
 
+.project-page {
+  background: url('project02.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 300px;
+}
+
+.project-page h1 a {
+  color: #fff;
+}
+
+.project-page h1 a:hover {
+  color: #D3B408;
+}
+
 /* Callout */
 
 .callout {

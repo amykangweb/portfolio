@@ -2,21 +2,11 @@
 
   <div class="services text-center">
 
-    <h1><%= @project.name %></h1>
-    <h4 id="author"><%= @project.technologies_used %></h4>
+    <%= render 'project' %>
 
-    <div class="line"></div>
+    <%= render 'control' %>
 
-    <p><%= image_tag @project.image.url, id: 'image_one' %></p>
-    <p><%= image_tag @project.extra.url, id: 'image_two' %></p>
-
-    <div class="article-control link_color">
-      <% if policy(@project).is_editor? %>
-          <%= link_to 'Edit', edit_project_path(@project) %>
-          &nbsp;&nbsp;
-          <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </div>
+    <%= render 'prev_next' %>
   </div>
 
   <%= render 'layouts/callout' %>

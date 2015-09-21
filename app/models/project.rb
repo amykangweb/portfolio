@@ -5,4 +5,17 @@ class Project < ActiveRecord::Base
   mount_uploader :extra, ImageUploader
   validates :name, length: { in: 4..255 }
   validates :technologies_used, presence: true
+  validates :description, presence: true
+
+  def next
+    Project.all.reverse.find do |project|
+      project.id > self.id
+    end
+  end
+
+  def previous
+    Project.all.find do |project|
+      project.id < self.id
+    end
+  end
 end

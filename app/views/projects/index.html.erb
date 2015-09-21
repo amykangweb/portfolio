@@ -1,14 +1,29 @@
 <%= render 'projects_header' %>
 
 <div class="services text-center">
-  <div class="article">
-    <% @projects.each do |project| %>
-      <p>
-        <h2><%= link_to project.name, project %></h2>
-        <h5><%= project.technologies_used %></h5>
-      </p>
-    <% end %>
+  <!-- Portfolio -->
+  <div id="portfolio" class="portfolio">
+    <div class="row">
+      <div class="large-12 columns">
+
+        <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+          <%- @projects.each do |project| %>
+            <li>
+              <%= link_to project do %>
+              <div class="image-wrapper overlay-fade-in">
+                <%= image_tag project.thumbnail.url %>
+              <div class="image-overlay-content">
+              <h2><%= project.technologies_used %></h2>
+            </div>
+            </div>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
+  <!-- /Portfolio -->
   <br>
   <% if user_signed_in? && current_user.editor? %>
     <%= link_to 'New Project', new_project_path, class: "button radius yellow-bg new-article" %>
