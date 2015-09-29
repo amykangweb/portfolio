@@ -5,7 +5,11 @@ require "minitest/rails"
 require "minitest/rails/capybara"
 require "minitest/pride"
 require "minitest/reporters"
+require "minitest/matchers"
+require "email_spec"
 require "selenium-webdriver"
+include EmailSpec::Helpers
+include EmailSpec::Matchers
 
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
