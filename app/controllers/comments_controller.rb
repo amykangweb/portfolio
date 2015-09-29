@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
     @comment.article_id = @article.id
     respond_to do |format|
       if @comment.save
+        CommentsWorker.perform_async(current_user, @comment)
         CommentMailer.create_comment(current_user, @comment).deliver_later
         format.html { redirect_to :back, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
