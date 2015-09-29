@@ -5,6 +5,11 @@ feature "Creating a comment" do
     articles(:one).save
   end
 
+  scenario "should send email notification to me" do
+    email = CommentMailer.create_comment(users(:wilbur), comments(:one))
+    email.must deliver_to("selene6023@gmail.com")
+  end
+
   scenario "shows new comment for signed in user" do
     sign_in(:benji)
     visit article_path(articles(:one))

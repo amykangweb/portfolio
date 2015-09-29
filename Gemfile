@@ -34,7 +34,9 @@ end
 
 group :development, :test do
   gem 'byebug'
+  gem 'email_spec'
   gem 'launchy'
+  gem 'minitest-matchers'
   gem 'minitest-rails-capybara'
   gem 'minitest-reporters'
   gem 'rubocop'
@@ -43,6 +45,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener'
   gem 'spring'
   gem 'sqlite3'
   gem 'web-console', '~> 2.0'
