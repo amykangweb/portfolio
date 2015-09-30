@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { :host => 'amykang.net' }
+  config.action_mailer.default_url_options = { :host => 'www.amykang.net' }
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
@@ -8,7 +8,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
      :port           => 587,
      :address        => 'smtp.sendgrid.net',
-     :domain         => 'amykang.net',
+     :domain         => 'heroku.com',
      :enable_starttls_auto => true,
      :user_name      => ENV['SENDGRID_USERNAME'],
      :password       => ENV['SENDGRID_PASSWORD'],
