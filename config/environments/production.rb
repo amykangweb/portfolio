@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-  config.action_mailer.default_url_options = { :host => 'www.amykang.net' }
+  config.action_mailer.default_url_options = { :host => 'amy-kang-portfolio.herokuapp.com' }
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
