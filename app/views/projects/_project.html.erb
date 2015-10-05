@@ -12,8 +12,12 @@
 <div class="row">
   <div class="large-12 columns text-center visit-links">
     <p>
-      <%= link_to "Visit Site", @project.site, class: "button radius yellow-bg" %>&nbsp;
-      <%= link_to "Source", @project.source, class: "button radius yellow-bg" %>
+      <% if @project.site %>
+        <%= link_to "Visit Site", @project.site, class: "button radius yellow-bg" %>&nbsp;
+      <% end %>
+      <% if @project.source %>
+        <%= link_to "Source", @project.source, class: "button radius yellow-bg" %>
+      <% end %>
     </p>
   </div>
 </div>
