@@ -9,5 +9,14 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="large-12 columns text-center visit-links">
+    <p>
+      <%= link_to "Visit Site", @project.site, class: "button radius yellow-bg" %>&nbsp;
+      <%= link_to "Source", @project.source, class: "button radius yellow-bg" %>
+    </p>
+  </div>
+</div>
+
 <p><%= image_tag @project.image.url, id: 'image_one' %></p>
 <p><%= image_tag @project.extra.url, id: 'image_two' %></p>
