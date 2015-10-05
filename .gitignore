@@ -23,3 +23,5 @@
 /config/application.yml
 
 /vendor
+
+dump.rdb
