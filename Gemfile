@@ -20,6 +20,7 @@ gem 'pundit'
 gem 'rails', '4.2.4'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq'
+gem 'social-share-button'
 gem 'turbolinks'
 
 group :assets do
