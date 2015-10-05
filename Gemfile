@@ -46,6 +46,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'brakeman', :require => false
   gem 'letter_opener'
   gem 'spring'
   gem 'sqlite3'
