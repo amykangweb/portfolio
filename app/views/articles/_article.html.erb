@@ -12,8 +12,8 @@
 <div class="line"></div>
 
 <div class="row">
-  <div class="large-12 columns article-body text-left">
+  <div class="large-12 columns article-body text-center">
     <%= image_tag(@article.featured.url, id: 'featured_image') if @article.featured? %>
-    <p><%= raw sanitize(simple_format(@article.body)) %></p>
+    <%= raw sanitize(simple_format(@article.body)) %>
   </div>
 </div>
