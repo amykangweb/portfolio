@@ -14,6 +14,6 @@
 <div class="row">
   <div class="large-12 columns article-body text-left">
     <%= image_tag(@article.featured.url, id: 'featured_image') if @article.featured? %>
-    <%= simple_format(@article.body, {}, sanitize: false) %>
+    <%= simple_format(@article.body, {}, sanitize: false).html_safe %>
   </div>
 </div>
