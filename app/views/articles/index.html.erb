@@ -7,6 +7,9 @@
   <% end %>
 
     <div class="article">
+
+      <%= will_paginate @articles %>
+
       <% @articles.each do |article| %>
           <p>
             <h2>
@@ -19,6 +22,8 @@
                   <div class="article-space"></div>
           </p>
       <% end %>
+
+      <%= will_paginate @articles %>
     </div>
 
   <br>

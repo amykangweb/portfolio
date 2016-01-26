@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     if user_signed_in? && current_user.editor?
-      @articles = Article.all
+      @articles = Article.all.paginate(page: params[:page], per_page: 15)
     else
-      @articles = Article.where(published: true)
+      @articles = Article.where(published: true).paginate(page: params[:page], per_page: 15)
     end
   end
 

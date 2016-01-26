@@ -22,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq'
 gem 'social-share-button'
 gem 'turbolinks'
+gem 'will_paginate', '~> 3.0.6'
 
 group :assets do
   gem 'coffee-rails', '~> 4.1.0'
