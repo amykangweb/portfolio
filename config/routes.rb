@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   resources :users do
     get :control
   end
-  resources :articles do
-    resources :comments
-  end
+  # resources :articles do
+  #   resources :comments
+  # end
   resources :projects
   root 'welcome#index'
 
