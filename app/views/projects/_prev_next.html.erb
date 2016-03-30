@@ -1,9 +1,9 @@
 <h5 class="prev-home-next">
   <% if @project.previous %>
-    <p><%= link_to "&#8592; #{@project.previous.name}".html_safe, @project.previous %></p>
+    <p><%= link_to "&#8592; #{@project.previous.name}".html_safe, @project.previous, remote: true %></p>
   <% end %>
 
   <% if @project.next %>
-    <p><%= link_to "#{@project.next.name} &#8594;".html_safe, @project.next %></p>
+    <p><%= link_to "#{@project.next.name} &#8594;".html_safe, @project.next, remote: true %></p>
   <% end %>
 </h5>

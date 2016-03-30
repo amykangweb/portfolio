@@ -1,10 +1,10 @@
 <!-- Portfolio -->
 <div id="portfolio" class="portfolio">
     <div class="row">
-        <div class="large-12 columns">
-            <h2 class="text-center">My Work</h2>
+        <div class="large-12 columns text-center">
+            <h2>Work</h2>
             <div class="line"></div>
-            <p class="text-center p"><!-- About Work --></p>
+            <p><!-- About Work --></p>
         </div>
     </div>
   <div class="row">
@@ -13,7 +13,7 @@
       <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-3">
         <%- @projects.each do |project| %>
           <li>
-            <%= link_to project do %>
+            <%= link_to project_path(project), remote: true do %>
             <div class="image-wrapper overlay-fade-in">
               <%= image_tag project.thumbnail.url %>
             <div class="image-overlay-content">
@@ -22,6 +22,8 @@
           </div>
           <% end %>
         </li>
+        <div class="project-wrapper <%= project.id %>">
+        </div>
         <% end %>
       </ul>
     </div>

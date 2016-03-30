@@ -276,7 +276,7 @@ a {
 /* Intro */
 
 .intro {
-    padding: 50px 0;
+    padding: 40px 0;
 }
 
 /* Services: Styles used for Blog */
@@ -310,6 +310,7 @@ a {
     background-image: url('paper_fibers.png');
     padding: 50px 0 30px 0;
     margin-bottom: 0px;
+    margin-top: -75px;
 }
 
 .new-article {
@@ -336,6 +337,7 @@ a {
 .article-body {
   font-size: 20px;
   margin-bottom: 30px;
+  padding: 30px;
 }
 
 .article-body p {
@@ -506,6 +508,10 @@ a {
 }
 
 /*contact*/
+#contact-info {
+    margin-top: 100px;
+}
+
 #contact-form {
     width: 100%;
     margin: 0 auto;

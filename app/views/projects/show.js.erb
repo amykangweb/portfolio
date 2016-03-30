@@ -1,0 +1,8 @@
+$('.project-wrapper').html(" ");
+$('.project-wrapper.<%= @project.id %>').html("<%= j render 'projects/show', project: @project %>");
+$('.close-out').click(function(){
+  $('.project-wrapper').html(" ");
+});
+$('.overlay').click(function(){
+  $('.project-wrapper').html(" ");
+});
