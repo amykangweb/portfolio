@@ -13,10 +13,7 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require d3
 //= require social-share-button
-//= require foundation
+//= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
-
-$(function(){ $(document).foundation(); });
