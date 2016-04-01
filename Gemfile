@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave', '0.10.0'
 gem 'devise'
 gem 'figaro'
