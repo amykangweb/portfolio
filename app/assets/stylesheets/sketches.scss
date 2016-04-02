@@ -1,6 +1,10 @@
+.sketch-bg {
+  background: asset-url("symphony.png");
+}
+
 .sketch-container {
   position: relative;
-  background: asset-url("swirl_pattern.png");
+  background: rgba(0, 0, 0, 0.85);
   height: 200px;
   overflow: hidden;
   cursor: pointer;
