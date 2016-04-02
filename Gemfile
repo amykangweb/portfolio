@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'mini_magick', '3.8.0'
+gem "omniauth-github"
 gem 'rails', '4.2.4'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sidekiq'
