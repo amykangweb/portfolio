@@ -13,7 +13,11 @@
   </head>
   <body id="home">
 
+  <% if current_page?(root_path) %>
     <%= render 'layouts/header' %>
+  <% else %>
+    <%= render 'layouts/alternate' %>
+  <% end %>
 
     <div id="wrapper">
 

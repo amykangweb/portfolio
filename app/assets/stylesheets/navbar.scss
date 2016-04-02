@@ -15,6 +15,12 @@ a.navbar-brand:hover {
   opacity: 0.85;
 }
 
+.navbar-right {
+  position: relative;
+  top: 0;
+  right: 20px;
+}
+
 .fa-bars {
   color: #fff !important;
   font-size: 25px;
@@ -37,4 +43,20 @@ ul.nav li a {
   color: #fff !important;
   font-size: 17px;
   margin-top: 5px;
+}
+
+@media handheld, only screen and (max-width: 1000px) {
+
+.navbar-right {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  }
+}
+
+@media handheld, only screen and (max-width: 480px) {
+
+  a.navbar-brand {
+    display: none;
+  }
 }
