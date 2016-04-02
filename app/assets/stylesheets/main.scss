@@ -2,7 +2,8 @@
 
 .jumbotron {
   background: transparent;
-  height: 700px;
+  height: 650px;
+  z-index: -1;
 }
 
 .jumbotron-img {
@@ -10,4 +11,14 @@
   top: 0;
   z-index: -1;
   max-width: 100%;
+}
+
+.billboard-text {
+  position: absolute;
+  top: 200px;
+  color: #fff;
+}
+
+.white-bg {
+  background: #fff;
 }
