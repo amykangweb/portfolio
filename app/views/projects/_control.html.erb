@@ -1,7 +1,7 @@
 <div class="article-control link_color">
   <% if user_signed_in? && current_user.editor? %>
-      <%= link_to 'Edit', edit_project_path(@project) %>
+      <%= link_to 'Edit', edit_project_path(@project), class: "project-link" %>
       &nbsp;&nbsp;
-      <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "project-link" %>
   <% end %>
 </div>

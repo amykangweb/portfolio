@@ -15,9 +15,19 @@
   z-index: 2000;
 }
 
-.project-show {
+.fa-times {
+  color: #fff;
+  font-size: 35px;
   position: absolute;
-  top: 100px;
+  top: -20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 2007;
+}
+
+.project-show {
+  position: fixed;
+  top: 50px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -32,13 +42,23 @@
   margin: 0 auto;
   z-index: 2006;
   color: #fff;
+  padding-bottom: 60px;
+  max-height: 600px;
+  overflow: hide;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 a.project-link {
   color: #fff;
 }
 
-.image_one, .image_two {
+#image_one, #image_two {
   max-width: 100%;
 }
 
