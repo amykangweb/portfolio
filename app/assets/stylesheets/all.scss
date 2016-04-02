@@ -5,6 +5,11 @@ html, body {
  color: #3d3d29;
 }
 
+.large_spacer {
+  width: 100%;
+  height: 100px;
+}
+
 .spacer {
   width: 100%;
   height: 50px;
@@ -18,4 +23,31 @@ html, body {
 .tiny_spacer {
   width: 100%;
   height: 15px;
+}
+
+.white-bg {
+  background: #fff;
+}
+
+.grey-bg {
+  background: #f5f5f0;
+}
+
+.inner-container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.default-btn {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background: #ff751a;
+  border: none;
+  font-size: 15px;
+  color: #fff;
+  &:hover {
+    background: #ff9900;
+  }
 }

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :check_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
@@ -63,6 +64,12 @@ class PostsController < ApplicationController
   end
 
   private
+
+    def check_user
+      unless current_user.editor?
+        redirect_to root_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
