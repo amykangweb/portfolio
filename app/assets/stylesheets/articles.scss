@@ -1,4 +1,7 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.articles-header {
+  background: asset-url("code.png") no-repeat center center fixed;
+  background-size: cover;
+  text-align: center;
+  height: 250px;
+  color: #fff;
+}

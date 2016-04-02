@@ -1,32 +1,28 @@
-<%= render 'articles_header' %>
-
-<div class="services text-center">
-
-  <% if user_can_view?(current_user) %>
-    <%= link_to 'New Article', new_article_path, class: "button radius yellow-bg new-article" %>
-  <% end %>
-
-    <div class="article">
-
-      <%= will_paginate @articles %>
-
-      <% @articles.each do |article| %>
-          <p>
-            <h2>
-              <%= link_to article.title, article %>
-              <% if !article.published %>
-                <i class="fi-lock" title="Unpublished"></i>
-              <% end %>
-            </h2>
-                <h5><%= shorten(sanitize(article.body)) %>...</h5>
-                  <div class="article-space"></div>
-          </p>
-      <% end %>
-
-      <%= will_paginate @articles %>
-    </div>
-
-  <br>
+<div class="articles-header">
+<div class="large_spacer"></div>
+<h1><strong>TIPS & TUTORIALS</strong></h1>
+<em>Programming tips, tutorials, and notes.</em>
 </div>
 
-<%= render 'layouts/callout' %>
+<div class="inner-container">
+
+  <% if user_signed_in? && current_user.editor? %>
+    <%= link_to 'New Article', new_article_path %>
+  <% end %>
+
+    <% @articles.each do |article| %>
+        <div class="row">
+        <div class="col-lg-12">
+          <h3><strong><%= link_to article.title, article %></strong></h3>
+
+          <%= truncate(sanitize(article.body), length: 200) %>
+
+        </div>
+        </div>
+    <% end %>
+
+    <div class="text-center">
+    <%= will_paginate @articles %>
+    </div>
+
+</div>
