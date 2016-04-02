@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
   # GET /articles
   # GET /articles.json
   def index
@@ -16,12 +17,10 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    authorize @article, :create?
   end
 
   # GET /articles/1/edit
   def edit
-    authorize @article
   end
 
   # POST /articles
@@ -29,7 +28,6 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     respond_to do |format|
-      authorize @article
       if @article.save
         current_user.articles << @article
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -45,7 +43,6 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1.json
   def update
     respond_to do |format|
-      authorize @article
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
@@ -59,7 +56,6 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
-    authorize @article, :is_editor?
     if @article.destroy
       flash[:notice] = "Article was successfully destroyed."
       redirect_to articles_path
@@ -70,6 +66,11 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def check_user
+      unless current_user.editor?
+        redirect_to root_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])

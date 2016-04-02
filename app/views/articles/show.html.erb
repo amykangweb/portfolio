@@ -1,27 +1,40 @@
-<%= render 'articles_header' %>
-
-<div class="services text-center">
-
-  <%= render 'article' %>
-
-  <%= social_share_button_tag(@article.title) %>
-
-  <%= render 'controls' %>
-
-  <%= render 'prev_next' %>
+<div class="articles-header">
+<div class="large_spacer"></div>
+<h1><strong>TIPS & TUTORIALS</strong></h1>
+<em>Programming tips, tutorials, and notes.</em>
 </div>
 
-<%= render 'layouts/callout' %>
+<div class="inner-container">
 
-<div class="large-8 large-centered medium-10 medium-centered columns text-left comments-form">
-  <h2>Comment</h2>
+ <h2><strong><%= @article.title %></strong></h2>
+ <div class="tiny_spacer"></div>
 
-  <%= render partial: 'comments/form', article: @article %>
+  <p><%= simple_format(@article.body, {}, sanitize: false).html_safe %></p>
 
-  <% if !@article.comments.blank? %>
-    <div class="comments">
-      <h5><%= "#{@article.comments.count} Comments" %></h5>
-      <%= render "comments" %>
-    </div>
+  <div class="small_spacer"></div>
+  <div class="text-center">
+  <%= social_share_button_tag(@article.title) %>
+  </div>
+
+  <div class="small_spacer"></div>
+  <% unless @article.next.blank? %>
+  <p class="text-center">
+    <%= link_to @article.previous do %>
+      &#8592; Previous
+    <% end %>
+    &nbsp;&nbsp;
+    <%= link_to @article.next do %>
+      Next &rarr;
+    <% end %>
+  </p>
   <% end %>
+
+  <% if user_signed_in? && current_user.editor? %>
+  <div class="text-center">
+    <%= link_to 'Edit', edit_article_path(@article) %>
+  &nbsp;&nbsp;
+    <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <% end %>
+
 </div>
