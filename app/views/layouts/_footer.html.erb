@@ -1,24 +1,47 @@
-      <footer>
-                          <%= link_to "https://github.com/amykangweb" do %>
-                        <i class="fa fa-github-alt fa-3x" style="color: #00a29d;"></i>
-                    <% end %>
-                    <h4>Github</h4>
-
-                                        <%= link_to "https://www.linkedin.com/in/selene6023" do %>
-                        <i class="fa fa-linkedin fa-3x gray" style="color: #b71c5d;"></i>
-                    <% end %>
-                    <h4>LinkedIn</h4>
-
-                                        <%= mail_to "selene6023@gmail.com" do %>
-                        <i class="fa fa-envelope fa-3x gray" style="color: #b71c5d;"></i>
-                    <% end %>
-                    <h4>Email</h4>
-
-                                        <%= link_to "https://instagram.com/selene6023/" do %>
-                        <i class="fa fa-instagram fa-3x" style="color: #e45801;"></i>
-                    <% end %>
-                    <h4>Instagram</h4>
-
-
-        <p>&copy; 2015 Company, Inc.</p>
-      </footer>
+<footer>
+<div class="white-bg" id="contact-info">
+<div class="small_spacer"></div>
+<div class="container text-center">
+<h2><strong>CONTACT ME</strong></h2>
+<div class="small_spacer"></div>
+<div class="row">
+    <div class="col-sm-12 col-md-3 col-lg-3">
+        <%= link_to "https://github.com/amykangweb", class: "social-icon" do %>
+            <i class="fa fa-github-alt fa-3x" style="color: #00a29d;"></i>
+        <% end %>
+        <div class="tiny_spacer"></div>
+        <p>GITHUB</p>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-3">
+        <%= link_to "https://www.linkedin.com/in/selene6023", class: "social-icon" do %>
+            <i class="fa fa-linkedin fa-3x gray social-icon" style="color: #b71c5d;"></i>
+        <% end %>
+        <div class="tiny_spacer"></div>
+        <p>LINKEDIN</p>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-3">
+        <%= link_to "https://instagram.com/selene6023/", class: "social-icon" do %>
+            <i class="fa fa-instagram fa-3x social-icon" style="color: #e45801;"></i>
+        <% end %>
+        <div class="tiny_spacer"></div>
+        <p>INSTAGRAM</p>
+    </div>
+    <div class="col-sm-12 col-md-3 col-lg-3">
+        <%= mail_to "selene6023@gmail.com", class: "social-icon" do %>
+            <i class="fa fa-envelope fa-3x gray social-icon" style="color: #b71c5d;"></i>
+        <% end %>
+        <div class="tiny_spacer"></div>
+        <p>EMAIL</p>
+    </div>
+</div>
+</div>
+</div>
+<div class="spacer"></div>
+<div class="black-bg">
+<div class="container text-center">
+<div class="small_spacer"></div>
+<p style="color: #fff;"><i class="fa fa-copyright"></i> 2016 Amy Kang</p>
+<div class="small_spacer"></div>
+</div>
+</div>
+</footer>
