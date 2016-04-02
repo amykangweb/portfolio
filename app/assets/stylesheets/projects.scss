@@ -1,37 +1,6 @@
-.visit-links p {
-  a {
-    color: #fff !important;
-    &:hover {
-      color: #fff !important;
-    }
-  }
-}
-
-.overlay {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.85);
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 998;
-}
-
-.project-show {
-  position: absolute;
-  top: -75px;
-  left: 0;
-  right: 0;
+.thumbnail {
+  border: none;
+  padding: 0;
+  border-radius: 0;
   margin: 0 auto;
-  width: 90%;
-  z-index: 1000;
-}
-
-.close-out {
-  position: absolute;
-  top: -225px;
-  right: 0;
-  color: #fff;
-  z-index: 1000;
-  cursor: pointer;
 }

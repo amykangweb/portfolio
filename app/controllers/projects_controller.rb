@@ -11,15 +11,13 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    authorize @project, :is_editor?
   end
 
   def create
     @project = Project.new(project_params)
-    authorize @project, :is_editor?
     if @project.save
       flash[:notice] = "Project has been created."
-      redirect_to @project
+      redirect_to root_path
     else
       flash.now[:error] = "Project could not be saved."
       render :new
