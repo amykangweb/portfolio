@@ -7,7 +7,7 @@
 <em>Life Lessons, Day to Day, Random Musings</em>
 </div>
 
-<div class="tiny_spacer"></div>
+<div class="small_spacer"></div>
 <div class="container">
 <div class="white-bg inner-container">
 
@@ -15,15 +15,25 @@
 <%= link_to 'New Post', new_post_path %>
 <% end %>
 
-    <% @posts.each do |post| %>
-      <p><h3><strong><%= link_to post.title, post %></strong></h3></p>
-      <p><em>Posted <%= time_ago_in_words(post.created_at) %> ago.</em></p>
-      <%= post.content %>
-      <%= link_to 'Show', post %>
-      <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
+  <% @posts.each do |post| %>
+    <p><h3><strong><%= link_to post.title, post %></strong></h3></p>
+    <p><i class="fa fa-coffee"></i>&nbsp;&nbsp;
+    <em>Posted <%= time_ago_in_words(post.created_at) %> ago.</em></p>
+    <p><%= truncate(post.content, length: 200) %></p>
+    <p>
+      <%= link_to post do %>
+        Read &rarr;
+      <% end %>
+    </p>
+    <div class="float-right">
+    <p>
+    <%= link_to 'Edit', edit_post_path(post) %> |
+    <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    </div>
+  <% end %>
 
+<div class="small_spacer"></div>
 </div>
 </div>
 <div class="large_spacer"></div>
