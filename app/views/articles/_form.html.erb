@@ -12,26 +12,17 @@
       </div>
     <% end %>
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "form-control" %>
     </div>
-    <div class="field">
+    <div class="form-group">
       <%= f.label :body %>
-      <%= f.text_area :body, rows: "12" %>
+      <%= f.text_area :body, class: "form-control", rows: 8 %>
     </div>
-    <div class="field">
-      <%= f.label :featured, "Featured Image(optional)" %>
-      <%= f.file_field :featured, accept: 'image/jpeg,image/gif,image/png' %>
-    </div>
-    <% if policy(@article).is_editor? %>
-      <div class="field">
-        <%= f.label :published, title: "Is this article published?", data: { tooltip: true } %>
-        <%= f.check_box :published %>
-      </div>
-    <% end %>
-    <div class="actions">
-      <%= f.submit class: "button radius expand yellow-bg" %>
+
+    <div class="form-group">
+      <%= f.submit class: "default-btn" %>
     </div>
   <% end %>
 </div>
