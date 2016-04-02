@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="spacer"></div>
+<div class="inner-container">
 
-<h1>Listing Sketches</h1>
+<h1 class="merri"><strong>Sketch Book</strong></h1>
+<p><em>My drawings, sketches, and doodles.</em></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if user_signed_in? && current_user.editor? %>
+<p><%= link_to 'New Sketch', new_sketch_path %></p>
+<% end %>
 
-  <tbody>
-    <% @sketches.each do |sketch| %>
-      <tr>
-        <td><%= sketch.image %></td>
-        <td><%= sketch.description %></td>
-        <td><%= link_to 'Show', sketch %></td>
-        <td><%= link_to 'Edit', edit_sketch_path(sketch) %></td>
-        <td><%= link_to 'Destroy', sketch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="small_spacer"></div>
 
-<br>
+<div class="row">
+  <% @sketches.each do |sketch| %>
+  <div class="col-lg-4 sketch-box">
+    <div class="sketch-container">
+    <div class="sketch-overlay"></div>
+      <%= image_tag sketch.image.url, class: "sketch-thumb" %>
+      <%= link_to "VIEW", sketch, class: "default-btn sketch-btn" %>
+    </div>
+  </div>
+  <% end %>
+</div>
 
-<%= link_to 'New Sketch', new_sketch_path %>
+<div class="text-center">
+<%= will_paginate @sketches %>
+</div>
+
+</div>

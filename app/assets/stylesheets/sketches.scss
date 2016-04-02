@@ -1,0 +1,43 @@
+.sketch-container {
+  position: relative;
+  background: asset-url("swirl_pattern.png");
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.sketch-thumb {
+  max-width: 300px;
+}
+
+.sketch-box {
+  margin-bottom: 30px;
+}
+
+.sketch-btn {
+  position: absolute;
+  width: 30%;
+  text-align: center;
+  top: 75px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: none;
+}
+
+.sketch-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+}
+
+.sketch-container:hover {
+  .sketch-btn {
+    display: block;
+  }
+  .sketch-overlay {
+    display: block;
+  }
+}

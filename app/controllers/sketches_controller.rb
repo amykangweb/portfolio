@@ -6,7 +6,7 @@ class SketchesController < ApplicationController
   # GET /sketches
   # GET /sketches.json
   def index
-    @sketches = Sketch.all
+    @sketches = Sketch.paginate(page: params[:page], per_page: 9)
   end
 
   # GET /sketches/1
