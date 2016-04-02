@@ -1,9 +1,0 @@
-one:
-  name: "My Project"
-  technologies_used: "Ruby on Rails"
-  description: "Rails project"
-
-two:
-  name: "Another Project"
-  technologies_used: "D3"
-  description: "JS project"

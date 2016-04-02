@@ -23,5 +23,6 @@
 /config/application.yml
 
 /vendor
+/test
 
 dump.rdb
