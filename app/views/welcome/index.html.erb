@@ -14,15 +14,15 @@
 <div class="spacer"></div>
 <div class="container text-center">
 <h2><strong>MY PROJECTS</strong></h2>
-<div class="small_spacer"></div>
   <!-- Example row of columns -->
   <div class="row" style="margin: 0 auto;">
   <%- @projects.each do |project| %>
   <%= link_to project do %>
     <div class="col-md-4 project-thumbnails">
-    <div class="thumbnail-overlay"></div>
+    <div class="thumbnail-overlay">
     <div class="overlay-text text-center">
     <strong><%= project.technologies_used %></strong>
+    </div>
     </div>
       <p><%= image_tag project.thumbnail.url, class: "thumbnail" %></p>
     </div>
