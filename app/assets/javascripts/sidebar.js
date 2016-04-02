@@ -5,4 +5,10 @@ $(document).ready(function(){
       $("#wrapper").toggleClass("toggled");
       $('.fa-bars').toggleClass("sidebar-out");
   });
+  $('.scroll-div').click(function(){
+    var divID = '#' + $(this).data('goal');
+    $('html, body').animate({
+        scrollTop: $(divID).offset().top
+    }, 1000);
+  });
 });

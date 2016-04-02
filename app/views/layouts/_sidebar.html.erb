@@ -5,16 +5,16 @@
             <a><%= "#{random_aside}" %></a>
         </li>
         <li>
-            <%= link_to "HOME", root_path(:anchor => "home") %>
+            <%= link_to "HOME", root_path(:anchor => "home"), class: "scroll-div", data: { goal: "home" } %>
         </li>
         <li>
-            <%= link_to "ABOUT", root_path(:anchor => "about") %>
+            <%= link_to "PORTFOLIO", root_path(:anchor => "portfolio"), class: "scroll-div", data: { goal: "portfolio" } %>
         </li>
         <li>
-            <%= link_to "PORTFOLIO", root_path(:anchor => "portfolio") %>
+            <%= link_to "ABOUT", root_path(:anchor => "about"), class: "scroll-div", data: { goal: "about" } %>
         </li>
         <li>
-            <%= link_to "CONTACT", root_path(:anchor => 'contact-info') %>
+            <%= link_to "CONTACT", root_path(:anchor => 'contact-info'), class: "scroll-div", data: { goal: "contact-info" } %>
         </li>
         <li>
             <a href="#">SKETCH</a>
