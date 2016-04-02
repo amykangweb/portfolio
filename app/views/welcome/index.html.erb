@@ -17,7 +17,7 @@
   <!-- Example row of columns -->
   <div class="row" style="margin: 0 auto;">
   <%- @projects.each do |project| %>
-  <%= link_to project do %>
+  <%= link_to project, remote: true do %>
     <div class="col-md-4 project-thumbnails">
     <div class="thumbnail-overlay">
     <div class="overlay-text text-center">
@@ -27,6 +27,8 @@
       <p><%= image_tag project.thumbnail.url, class: "thumbnail" %></p>
     </div>
     <% end %>
+    <div class="project-wrapper <%= project.id %>">
+    </div>
   <% end %>
   </div>
 </div>

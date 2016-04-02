@@ -1,26 +1,28 @@
+<div class="project-info">
 <h1><%= @project.name %></h1>
 <h4 id="author"><%= @project.technologies_used %></h4>
-
-<div class="line"></div>
 
 <div class="row">
   <div class="large-12 columns article-body text-center">
     <%= raw sanitize(simple_format(@project.description)) %>
   </div>
 </div>
+</div>
 
 <div class="row">
   <div class="large-12 columns text-center visit-links">
     <p>
       <% unless @project.site.blank? %>
-        <%= link_to "Visit Site", @project.site, class: "button radius yellow-bg" %>&nbsp;
+        <%= link_to "Visit Site", @project.site, class: "project-link" %>&nbsp;
       <% end %>
       <% unless @project.source.blank? %>
-        <%= link_to "Source", @project.source, class: "button radius yellow-bg" %>
+        <%= link_to "Source", @project.source, class: "project-link" %>
       <% end %>
     </p>
   </div>
 </div>
 
+<div class="project-images">
 <p><%= image_tag @project.image.url, id: 'image_one' %></p>
 <p><%= image_tag @project.extra.url, id: 'image_two' %></p>
+</div>

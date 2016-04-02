@@ -1,5 +1,5 @@
 <div class="article-control link_color">
-  <% if policy(@project).is_editor? %>
+  <% if user_signed_in? && current_user.editor? %>
       <%= link_to 'Edit', edit_project_path(@project) %>
       &nbsp;&nbsp;
       <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %>
