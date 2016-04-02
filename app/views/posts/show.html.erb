@@ -1,21 +1,43 @@
-<div class="inner-container">
+<div class="grey-bg">
+<div class="spacer"></div>
+<div class="small_spacer"></div>
+
+<div class="text-center">
+<h1 style="font-weight: bold;"><%= @post.title %></h1>
+<em>Life Lessons, Day to Day, Random Musings</em>
+</div>
+
+<div class="small_spacer"></div>
+<div class="container">
+<div class="white-bg inner-container">
 
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <i class="fa fa-coffee"></i>&nbsp;&nbsp;
+  <em>Posted <%= time_ago_in_words(@post.created_at) %> ago.</em>
 </p>
 
 <p>
-  <strong>Content:</strong>
   <%= @post.content %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @post.user %>
+<div class="small_spacer"></div>
+<% unless @post.next.blank? %>
+<p class="text-center">
+  <%= link_to @post.previous do %>
+    &#8592; Previous
+  <% end %>
+  &nbsp;&nbsp;
+  <%= link_to @post.next do %>
+    Next &rarr;
+  <% end %>
 </p>
+<% end %>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
 
+</div>
+
+</div>
+<div class="large_spacer"></div>
 </div>
