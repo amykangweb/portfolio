@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" style="height: 65px;background: transparent;border-color: transparent;">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="height: 65px;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -9,27 +9,8 @@
       </button>
       <%= link_to "AMY KANG", root_path, class: "navbar-brand" %>
     </div>
-    <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <%= link_to "HOME", root_path(:anchor => "home") %>
-            </li>
-            <li>
-                <%= link_to "ABOUT", root_path(:anchor => "about") %>
-            </li>
-            <li>
-                <%= link_to "PORTFOLIO", root_path(:anchor => "portfolio") %>
-            </li>
-            <li>
-                <%= link_to "CONTACT", root_path(:anchor => 'contact-info') %>
-            </li>
-            <% if user_signed_in? %>
-              <% if current_user.editor? %>
-                <li><%= link_to "New Project", new_project_path %></li>
-              <% end %>
-              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-            <% end %>
-        </ul>
+    <div class="navbar-right">
+        <i class="fa fa-bars" id="menu-toggle"></i>
     </div>
   </div>
 </nav>

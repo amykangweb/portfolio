@@ -1,3 +1,8 @@
+.navbar-inverse {
+  background: transparent;
+  border-color: transparent;
+}
+
 a.navbar-brand {
   font-weight: bold;
   color: #fff !important;
@@ -7,6 +12,21 @@ a.navbar-brand {
 
 a.navbar-brand:hover {
   opacity: 0.85;
+}
+
+.fa-bars {
+  color: #fff !important;
+  font-size: 25px;
+  margin-top: 17px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.sidebar-out {
+  margin-right: 250px;
 }
 
 ul.nav li a {
