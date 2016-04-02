@@ -33,6 +33,10 @@
   margin: 0 auto;
   max-width: 90%;
   z-index: 2005;
+  ::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+  }
 }
 
 .project-info {
@@ -47,11 +51,6 @@
   overflow: hide;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-}
-
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
 }
 
 a.project-link {
