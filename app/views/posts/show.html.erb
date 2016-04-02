@@ -21,15 +21,19 @@
 </p>
 
 <div class="small_spacer"></div>
-<% unless @post.next.blank? %>
+<% unless @post.next.blank? && @post.previous.blank? %>
 <p class="text-center">
+<% unless @post.previous.nil? %>
   <%= link_to @post.previous do %>
     &#8592; Previous
   <% end %>
+<% end %>
   &nbsp;&nbsp;
+<% unless @post.next.nil? %>
   <%= link_to @post.next do %>
     Next &rarr;
   <% end %>
+<% end %>
 </p>
 <% end %>
 

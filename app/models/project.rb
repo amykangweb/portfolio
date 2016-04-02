@@ -7,15 +7,11 @@ class Project < ActiveRecord::Base
   validates :technologies_used, presence: true
   validates :description, presence: true
 
-  def next
-    Project.all.reverse.find do |project|
-      project.id > self.id
-    end
+  def previous
+    Project.all.detect { |project| project.id < self.id }
   end
 
-  def previous
-    Project.all.find do |project|
-      project.id < self.id
-    end
+  def next
+    Project.all.detect { |project| project.id > self.id }
   end
 end

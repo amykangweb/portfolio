@@ -1,14 +1,51 @@
-<p id="notice"><%= notice %></p>
+<div class="sketch-bg">
+<div class="spacer"></div>
+<div class="inner-container">
 
+<h1 class="merri"><strong>Sketch Book</strong></h1>
+<p><em>My drawings, sketches, and doodles.</em></p>
+
+<% if user_signed_in? && current_user.editor? %>
+<p><%= link_to 'New Sketch', new_sketch_path %></p>
+<% end %>
+
+<div class="small_spacer"></div>
+
+<div class="text-center">
 <p>
-  <strong>Image:</strong>
-  <%= @sketch.image %>
+  <%= image_tag @sketch.image.url, style: "max-width: 100%;" %>
 </p>
 
+<div class="small_spacer"></div>
 <p>
-  <strong>Description:</strong>
-  <%= @sketch.description %>
+  <em><%= @sketch.description %></em>
 </p>
+</div>
 
+<div class="small_spacer"></div>
+<% unless @sketch.next.blank? && @sketch.previous.blank? %>
+<p class="text-center">
+<% unless @sketch.previous.nil? %>
+  <%= link_to @sketch.previous do %>
+    &#8592; Previous
+  <% end %>
+<% end %>
+  &nbsp;&nbsp;
+<% unless @sketch.next.nil? %>
+  <%= link_to @sketch.next do %>
+    Next &rarr;
+  <% end %>
+<% end %>
+</p>
+<% end %>
+
+<% if user_signed_in? && current_user.editor? %>
+<div class="text-center">
 <%= link_to 'Edit', edit_sketch_path(@sketch) %> |
 <%= link_to 'Back', sketches_path %>
+</div>
+<% end %>
+
+</div>
+<div class="spacer"></div>
+</div>
