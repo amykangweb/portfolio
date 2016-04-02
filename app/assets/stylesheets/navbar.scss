@@ -1,6 +1,7 @@
 .navbar-inverse {
   background: transparent;
   border-color: transparent;
+  z-index: 99;
 }
 
 a.navbar-brand {
@@ -23,6 +24,9 @@ a.navbar-brand:hover {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  &:hover {
+    opacity: 0.85;
+  }
 }
 
 .sidebar-out {
