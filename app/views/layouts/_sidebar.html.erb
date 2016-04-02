@@ -14,18 +14,21 @@
             <%= link_to "PORTFOLIO", root_path(:anchor => "portfolio"), class: "scroll-div", data: { goal: "portfolio" } %>
         </li>
         <li>
+            <%= link_to "JOURNAL", posts_path, class: "scroll-div", data: { goal: "portfolio" } %>
+        </li>
+        <li>
+            <%= link_to "TIPS & TUTORIALS", articles_path, class: "scroll-div", data: { goal: "portfolio" } %>
+        </li>
+        <li>
+            <%= link_to "SKETCH BOOK", '#', class: "scroll-div", data: { goal: "portfolio" } %>
+        </li>
+        <li>
             <%= link_to "ABOUT", root_path(:anchor => "about"), class: "scroll-div", data: { goal: "about" } %>
         </li>
         <li>
             <%= link_to "CONTACT", root_path(:anchor => 'contact-info'), class: "scroll-div", data: { goal: "contact-info" } %>
         </li>
-        <li>
-            <a href="#">SKETCH</a>
-        </li>
         <% if user_signed_in? %>
-          <% if current_user.editor? %>
-            <li><%= link_to "NEW PROJECT", new_project_path %></li>
-          <% end %>
           <li><%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %></li>
         <% end %>
     </ul>
