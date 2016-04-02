@@ -1,4 +1,6 @@
 class SketchesController < ApplicationController
+  before_action :authenticate_user!, except: [:show, :index]
+  before_action :check_user, only: [:new, :edit, :update, :destroy]
   before_action :set_sketch, only: [:show, :edit, :update, :destroy]
 
   # GET /sketches
@@ -62,6 +64,11 @@ class SketchesController < ApplicationController
   end
 
   private
+    def check_user
+      unless current_user.editor?
+        redirect_to root_path
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_sketch
       @sketch = Sketch.find(params[:id])
