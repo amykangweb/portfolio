@@ -7,6 +7,7 @@
     <p style="font-size: 20px;">I'm Amy. Welcome to my home on the web.</p>
     <div class="tiny_spacer"></div>
 
+    <% unless Post.first.blank? %>
     <div class="main-journal">
     <p><strong>LATEST JOURNAL ENTRY</strong></p>
     <p><i class="fa fa-coffee"></i>&nbsp;&nbsp;
@@ -18,6 +19,7 @@
       <% end %>
     </p>
     </div>
+    <% end %>
 
   </div>
   </div>
