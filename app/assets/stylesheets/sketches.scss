@@ -7,7 +7,6 @@
   background: rgba(0, 0, 0, 0.85);
   height: 200px;
   overflow: hidden;
-  cursor: pointer;
 }
 
 .sketch-thumb {
@@ -26,7 +25,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  display: none;
+  opacity: 0;
 }
 
 .sketch-overlay {
@@ -34,14 +33,18 @@
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.85);
-  display: none;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .sketch-container:hover {
-  .sketch-btn {
-    display: block;
-  }
   .sketch-overlay {
-    display: block;
+    opacity: 1;
+  }
+  .sketch-btn {
+    opacity: 1;
   }
 }

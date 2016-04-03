@@ -1,7 +1,8 @@
 module BackgroundHelper
 
   def random_bg
-    ["code.png", "coffeelaptop.png", "laptopglasses.png", "laptopopenbook.png"].sample
+    ["catroll.png", "catwall.png", "combination.png", "code.png",
+      "coffeelaptop.png", "laptopopenbook.png", "seriouscat.png"].sample
   end
 
 end
