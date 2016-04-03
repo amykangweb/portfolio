@@ -10,7 +10,6 @@
   position: relative;
   top: -50px;
   z-index: -1;
-  max-width: 100%;
 }
 
 .billboard-text {
@@ -80,4 +79,9 @@
   p {
     font-size: 15px;
   }
+}
+
+@media handheld, only screen and (max-width: 1000px) {
+
+
 }
