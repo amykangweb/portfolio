@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   private
 
   def after_sign_in_path_for(resource)
-    new_project_path
+    root_path
   end
 
   def user_not_authorized
