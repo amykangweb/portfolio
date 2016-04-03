@@ -8,6 +8,6 @@ class Sketch < ActiveRecord::Base
   end
 
   def next
-    Sketch.all.detect { |sketch| sketch.id > self.id }
+    Sketch.all.reverse.detect { |sketch| sketch.id > self.id }
   end
 end
