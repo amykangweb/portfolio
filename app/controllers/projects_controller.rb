@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       flash[:notice] = "Project has been created."
-      redirect_to root_path
+      redirect_to projects_path
     else
       flash.now[:error] = "Project could not be saved."
       render :new
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update_attributes(project_params)
-      redirect_to @project, notice: 'Project was sucessfully updated.'
+      redirect_to projects_path, notice: 'Project was sucessfully updated.'
     else
       render :edit
     end

@@ -1,51 +1,49 @@
-<div class="large-8 large-centered medium-10 medium-centered columns text-left">
-  <%= form_for(@project, html: { multipart: true}) do |f| %>
-    <% if @project.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<%= form_for(@project, html: { multipart: true}) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-        <ul>
-          <% @project.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="field p_name">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field p_tech">
-      <%= f.label :technologies_used %>
-      <%= f.text_area :technologies_used %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_area :description, rows: "8" %>
-    </div>
-    <div class="field">
-      <%= f.label :site %>
-      <%= f.text_field :site %>
-    </div>
-    <div class="field">
-      <%= f.label :source %>
-      <%= f.text_field :source %>
-    </div>
-    <div class="field">
-      <%= f.label :thumbnail %>
-      <%= f.file_field :thumbnail, accept: 'image/jpeg,image/gif,image/png' %>
-    </div>
-    <div class="field">
-      <%= f.label :image, accept: 'image/jpeg,image/gif,image/png' %>
-      <%= f.file_field :image %>
-    </div>
-    <div class="field">
-      <%= f.label :extra, "Additional Image(optional)", accept: 'image/jpeg,image/gif,image/png' %>
-      <%= f.file_field :extra %>
-    </div>
-    <div class="action">
-      <%= f.submit class: "button radius expand yellow-bg" %>
+      <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
-</div>
+
+  <div class="form-group p_name">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group p_tech">
+    <%= f.label :technologies_used %>
+    <%= f.text_area :technologies_used, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: "form-control", rows: 8 %>
+  </div>
+  <div class="form-group">
+    <%= f.label :site %>
+    <%= f.text_field :site, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :source %>
+    <%= f.text_field :source, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :thumbnail %>
+    <%= f.file_field :thumbnail, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :extra, "Additional Image(optional)" %>
+    <%= f.file_field :extra, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %>
+  </div>
+  <div class="action">
+    <%= f.submit class: "default-btn" %>
+  </div>
+<% end %>
