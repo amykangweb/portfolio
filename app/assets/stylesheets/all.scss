@@ -8,6 +8,10 @@ html, body {
  }
 }
 
+a:hover {
+  text-decoration: none !important;
+}
+
 .float-right {
   float: right;
 }

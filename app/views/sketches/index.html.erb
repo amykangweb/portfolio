@@ -2,7 +2,7 @@
 <div class="spacer"></div>
 <div class="inner-container">
 
-<h1 class="merri"><strong>Sketch Book</strong></h1>
+<h1 class="merri"><strong><%= link_to "Sketch Book", sketches_path %></strong></h1>
 <p><em>My drawings, sketches, and doodles.</em></p>
 
 <% if user_signed_in? && current_user.editor? %>

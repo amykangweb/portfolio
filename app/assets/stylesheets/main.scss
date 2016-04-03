@@ -15,8 +15,14 @@
 
 .billboard-text {
   position: absolute;
-  top: 200px;
+  top: 175px;
   color: #fff;
+}
+
+.main-journal {
+  p {
+    font-size: 15px !important;
+  }
 }
 
 .project-thumbnails {

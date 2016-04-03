@@ -3,7 +3,7 @@
 <div class="small_spacer"></div>
 
 <div class="text-center">
-<h1 style="font-weight: bold;">MY JOURNAL</h1>
+<h1 style="font-weight: bold;"><%= link_to "MY JOURNAL", posts_path %></h1>
 <em>Life Lessons, Day to Day, Random Musings</em>
 </div>
 
@@ -25,12 +25,14 @@
         Read &rarr;
       <% end %>
     </p>
+    <% if user_signed_in? && current_user.editor? %>
     <div class="float-right">
     <p>
     <%= link_to 'Edit', edit_post_path(post) %> |
     <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
     </p>
     </div>
+    <% end %>
   <% end %>
 
 <div class="small_spacer"></div>

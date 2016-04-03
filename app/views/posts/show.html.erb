@@ -37,8 +37,18 @@
 </p>
 <% end %>
 
+<div class="tiny_spacer"></div>
+<div class="text-center">
+<p><%= link_to 'Back', posts_path %></p>
+</div>
+
+<% if user_signed_in? && current_user.editor? %>
+<div class="tiny_spacer"></div>
+<div class="text-center">
 <%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to "Delete", @post, method: :delete, data: { confirm: "Are you sure you want to delete this post?" } %>
+</div>
+<% end %>
 
 </div>
 

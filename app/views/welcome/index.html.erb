@@ -3,9 +3,22 @@
 <%= image_tag "#{random_bg}", class: "jumbotron-img" %>
   <div class="container">
   <div class="billboard-text">
-    <h1>Hello, world!</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    <h1><strong>HELLO, WORLD!</strong></h1>
+    <p style="font-size: 20px;">I'm Amy. Welcome to my home on the web.</p>
+    <div class="tiny_spacer"></div>
+
+    <div class="main-journal">
+    <p><strong>LATEST JOURNAL ENTRY</strong></p>
+    <p><i class="fa fa-coffee"></i>&nbsp;&nbsp;
+    <em>Posted <%= time_ago_in_words(Post.first.created_at) %> ago.</em></p>
+    <p><%= truncate(Post.first.content, length: 150) %></p>
+    <p>
+      <%= link_to Post.first, style: "color: #fff;" do %>
+        Read &rarr;
+      <% end %>
+    </p>
+    </div>
+
   </div>
   </div>
 </div>
