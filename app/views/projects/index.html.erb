@@ -1,33 +1,26 @@
-<%= render 'projects_header' %>
-
-<div class="services text-center">
-  <!-- Portfolio -->
-  <div id="portfolio" class="portfolio">
-    <div class="row">
-      <div class="large-12 columns">
-
-        <ul class="clearing-thumbs small-block-grid-1 medium-block-grid-2 large-block-grid-3">
-          <%- @projects.each do |project| %>
-            <li>
-              <%= link_to project do %>
-              <div class="image-wrapper overlay-fade-in">
-                <%= image_tag project.thumbnail.url %>
-              <div class="image-overlay-content">
-              <h2><%= project.technologies_used %></h2>
-            </div>
-            </div>
-            <% end %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <!-- /Portfolio -->
-  <br>
+<div class="spacer"></div>
+<div class="small_spacer"></div>
+<div class="container text-center">
+<h2><strong>MY PROJECTS</strong></h2>
   <% if user_signed_in? && current_user.editor? %>
-    <%= link_to 'New Project', new_project_path, class: "button radius yellow-bg new-article" %>
+    <p><%= link_to 'New Project', new_project_path %></p>
   <% end %>
+  <!-- Example row of columns -->
+  <div class="row" style="margin: 0 auto;">
+  <%- @projects.each do |project| %>
+  <%= link_to project, remote: true do %>
+    <div class="col-md-4 project-thumbnails">
+    <div class="thumbnail-overlay">
+    <div class="overlay-text text-center">
+    <strong><%= project.technologies_used %></strong>
+    </div>
+    </div>
+      <p><%= image_tag project.thumbnail.url, class: "thumbnail" %></p>
+    </div>
+    <% end %>
+    <div class="project-wrapper <%= project.id %>">
+    </div>
+  <% end %>
+  </div>
+  <div class="spacer"></div>
 </div>
-
-<%= render 'layouts/callout' %>
