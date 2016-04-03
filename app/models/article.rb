@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
   end
 
   def next
-    Article.all.detect { |article| article.id > self.id }
+    Article.all.reverse.detect { |article| article.id > self.id }
   end
 
 end

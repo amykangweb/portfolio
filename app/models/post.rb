@@ -7,7 +7,7 @@ class Post < ActiveRecord::Base
   end
 
   def next
-    Post.all.detect { |post| post.id > self.id }
+    Post.all.reverse.detect { |post| post.id > self.id }
   end
 
 end

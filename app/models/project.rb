@@ -12,6 +12,6 @@ class Project < ActiveRecord::Base
   end
 
   def next
-    Project.all.detect { |project| project.id > self.id }
+    Project.all.reverse.detect { |project| project.id > self.id }
   end
 end
