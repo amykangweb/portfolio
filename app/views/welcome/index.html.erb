@@ -7,14 +7,14 @@
     <p style="font-size: 20px;">I'm Amy. Welcome to my home on the web.</p>
     <div class="tiny_spacer"></div>
 
-    <% unless Post.first.blank? %>
+    <% unless Article.first.blank? %>
     <div class="main-journal">
-    <p><strong>LATEST JOURNAL ENTRY</strong></p>
+    <p><strong>LATEST IN TIPS & TUTORIALS</strong></p>
     <p><i class="fa fa-coffee"></i>&nbsp;&nbsp;
-    <em>Posted <%= time_ago_in_words(Post.first.created_at) %> ago.</em></p>
-    <p><%= truncate(Post.first.content, length: 150) %></p>
+    <em>Posted <%= time_ago_in_words(Article.first.created_at) %> ago.</em></p>
+    <p><%= truncate(Article.first.body.html_safe, length: 150) %></p>
     <p>
-      <%= link_to Post.first, style: "color: #fff;" do %>
+      <%= link_to Article.first, style: "color: #fff;" do %>
         Read &rarr;
       <% end %>
     </p>
