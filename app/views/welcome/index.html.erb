@@ -12,7 +12,7 @@
     <p><strong>LATEST IN TIPS & TUTORIALS</strong></p>
     <p><i class="fa fa-coffee"></i>&nbsp;&nbsp;
     <em>Posted <%= time_ago_in_words(Article.first.created_at) %> ago.</em></p>
-    <p><%= truncate(Article.first.body.html_safe, length: 150) %></p>
+    <p><%= truncate(Article.first.body, length: 150).html_safe %></p>
     <p>
       <%= link_to Article.first, style: "color: #fff;" do %>
         Read &rarr;
