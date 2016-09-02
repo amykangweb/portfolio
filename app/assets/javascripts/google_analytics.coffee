@@ -22,6 +22,9 @@ class @GoogleAnalytics
     else
       GoogleAnalytics.trackPageview()
 
+  $('.tips-and-tutorials').click ->
+    ga('send', 'event', 'link', 'click');
+
   @trackPageview: (url) ->
     unless GoogleAnalytics.isLocalRequest()
       if url

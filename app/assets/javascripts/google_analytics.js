@@ -21,6 +21,10 @@ this.GoogleAnalytics = (function() {
     }
   };
 
+  $('.tips-and-tutorials').click(function() {
+    return ga('send', 'event', 'link', 'click');
+  });
+
   GoogleAnalytics.trackPageview = function(url) {
     if (!GoogleAnalytics.isLocalRequest()) {
       if (url) {
