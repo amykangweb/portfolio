@@ -13,18 +13,17 @@ this.GoogleAnalytics = (function() {
     firstScript = document.getElementsByTagName("script")[0];
     firstScript.parentNode.insertBefore(ga, firstScript);
     if (typeof Turbolinks !== 'undefined' && Turbolinks.supported) {
-      return document.addEventListener("page:change", (function() {
+      document.addEventListener("page:change", (function() {
         return GoogleAnalytics.trackPageview();
       }), true);
     } else {
-      return GoogleAnalytics.trackPageview();
+      GoogleAnalytics.trackPageview();
     }
+    return $('.tips-and-tutorials').click(function() {
+      console.log("hello");
+      return ga('send', 'event', 'click', 'link', 'Tutorial');
+    });
   };
-
-  $('.tips-and-tutorials').click(function() {
-    console.log("hello");
-    return ga('send', 'event', 'click', 'link', 'Tutorial');
-  });
 
   GoogleAnalytics.trackPageview = function(url) {
     if (!GoogleAnalytics.isLocalRequest()) {
