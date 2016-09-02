@@ -81,5 +81,7 @@
 
   ga('create', 'UA-83617436-1', 'auto');
   ga('send', 'pageview');
-  ga('send', 'event', 'click', 'link', 'Tutorial');
+  $('.tips-and-tutorials').click(function() {
+    ga('send', 'event', 'click', 'link', 'Tutorial');
+  });
 </script>
