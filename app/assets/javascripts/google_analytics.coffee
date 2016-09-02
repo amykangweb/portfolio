@@ -22,6 +22,7 @@ class @GoogleAnalytics
     else
       GoogleAnalytics.trackPageview()
 
+  @eventcall: ->
     $('.tips-and-tutorials').click ->
       console.log("hello");
       ga('send', 'event', 'click', 'link', 'Tutorial');
@@ -45,3 +46,4 @@ class @GoogleAnalytics
     'UA-83617436-1'
 
 GoogleAnalytics.load()
+GoogleAnalytics.eventcall()

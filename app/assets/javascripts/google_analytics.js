@@ -13,12 +13,15 @@ this.GoogleAnalytics = (function() {
     firstScript = document.getElementsByTagName("script")[0];
     firstScript.parentNode.insertBefore(ga, firstScript);
     if (typeof Turbolinks !== 'undefined' && Turbolinks.supported) {
-      document.addEventListener("page:change", (function() {
+      return document.addEventListener("page:change", (function() {
         return GoogleAnalytics.trackPageview();
       }), true);
     } else {
-      GoogleAnalytics.trackPageview();
+      return GoogleAnalytics.trackPageview();
     }
+  };
+
+  GoogleAnalytics.eventcall = function() {
     return $('.tips-and-tutorials').click(function() {
       console.log("hello");
       return ga('send', 'event', 'click', 'link', 'Tutorial');
@@ -53,3 +56,5 @@ this.GoogleAnalytics = (function() {
 })();
 
 GoogleAnalytics.load();
+
+GoogleAnalytics.eventcall();
