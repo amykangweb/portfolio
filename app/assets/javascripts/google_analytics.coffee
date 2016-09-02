@@ -23,7 +23,8 @@ class @GoogleAnalytics
       GoogleAnalytics.trackPageview()
 
   $('.tips-and-tutorials').click ->
-    ga('send', 'event', 'link', 'click');
+    console.log("hello");
+    ga('send', 'event', 'click', 'link', 'Tutorial');
 
   @trackPageview: (url) ->
     unless GoogleAnalytics.isLocalRequest()

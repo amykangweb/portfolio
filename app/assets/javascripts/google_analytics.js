@@ -22,7 +22,8 @@ this.GoogleAnalytics = (function() {
   };
 
   $('.tips-and-tutorials').click(function() {
-    return ga('send', 'event', 'link', 'click');
+    console.log("hello");
+    return ga('send', 'event', 'click', 'link', 'Tutorial');
   });
 
   GoogleAnalytics.trackPageview = function(url) {
