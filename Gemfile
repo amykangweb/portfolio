@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.3.1'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'carrierwave', '0.10.0'
@@ -10,6 +12,7 @@ gem 'font-awesome-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'letsencrypt_http_challenge'
 gem 'mini_magick', '3.8.0'
 gem "omniauth-github"
 gem 'rails', '4.2.4'

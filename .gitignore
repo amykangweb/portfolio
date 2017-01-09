@@ -24,5 +24,6 @@
 
 /vendor
 /test
+.env
 
 dump.rdb
